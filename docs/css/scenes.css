@@ -26,6 +26,7 @@
 .scene-frame {
   position: relative;
   /* S'adapte à l'espace disponible en conservant 16:9 */
+  aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
   max-width: 100%;
@@ -33,13 +34,6 @@
   overflow: hidden;
   background: #1a4a5c;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
-}
-
-@media (orientation: landscape) {
-  .scene-frame {
-    width: auto;
-    height: 100%;
-  }
 }
 
 /* Repli si container queries non supportées */
