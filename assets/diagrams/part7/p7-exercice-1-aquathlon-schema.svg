@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+  <rect width="100%" height="100%" fill="#f8f1dd"/>
+  <rect x="40" y="26" width="1000" height="58" rx="12" fill="#2a323a" stroke="#d2ac5a" stroke-width="2"/>
+  <text x="540.0" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#fff6da">Exercice 1 - Le trajet du récif noir</text>
+  
+  <g stroke="#225c82" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M150 500 L640 500 L770 500"/>
+    <path d="M150 500 L150 292 L150 240"/>
+    <path d="M640 500 L150 292 M770 500 L150 240"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#222b33">
+    <text x="122" y="540">A</text><text x="632" y="540">C</text><text x="762" y="540">B</text><text x="104" y="300">D</text><text x="104" y="248">E</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="24" fill="#222b33">
+    <text x="330" y="560">AC = 480 m</text><text x="662" y="560">CB = 120 m</text><text x="58" y="398">AD = ?</text><text x="44" y="270">DE = 50 m</text><text x="206" y="230">AE = 250 m</text>
+  </g>
+
+</svg>

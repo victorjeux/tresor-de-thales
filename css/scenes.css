@@ -1,0 +1,1097 @@
+/* Zone de jeu / scènes */
+.game-shell {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #0f2833;
+}
+
+.scene-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #0a1c24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+  container-name: stage;
+}
+
+/**
+ * Cadre unique 16:9 : décor + objets + hotspots partagent les mêmes %
+ * basés sur la taille native des fonds (1672×941).
+ */
+.scene-frame {
+  position: relative;
+  /* S'adapte à l'espace disponible en conservant 16:9 */
+  width: min(100cqw, calc(100cqh * 16 / 9));
+  height: min(100cqh, calc(100cqw * 9 / 16));
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  background: #1a4a5c;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+}
+
+/* Repli si container queries non supportées */
+@supports not (width: 1cqw) {
+  .scene-frame {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: 100%;
+  }
+}
+
+.scene-decor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.scene-objects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.decor-object,
+.hotspot-object {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+  z-index: 1;
+  height: auto;
+  max-width: 45%;
+  max-height: 55%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Largeur/hauteur en % du cadre si fournies via style inline (w/h JSON) */
+.decor-object[style*='width'],
+.hotspot-object[style*='width'] {
+  max-width: none;
+}
+
+.decor-object[style*='height'],
+.hotspot-object[style*='height'] {
+  max-height: none;
+}
+
+.scene-decor svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hotspots : invisibles hors mode debug ; coords % du .scene-frame.
+   left/top = centre du rectangle ; translate(-50%,-50%) aligne le bouton. */
+.hotspot {
+  position: absolute;
+  min-width: 44px;
+  min-height: 44px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  padding: 0;
+  /* centre géométrique du hotspot = (left, top) */
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  z-index: 3;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.hotspot:active {
+  background: rgba(255, 236, 180, 0.12);
+}
+
+.hotspot:focus-visible {
+  outline: 2px solid rgba(255, 220, 120, 0.9);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 220, 120, 0.25);
+  background: rgba(255, 236, 180, 0.1);
+}
+
+.hotspot-label {
+  display: none;
+}
+
+/* Hotspots silas temporairement non cliquables (dialogue / final) */
+.hotspot.hotspot-silas-disabled {
+  pointer-events: none !important;
+  cursor: default;
+}
+
+/* Mode debug */
+html.debug-hotspots .hotspot {
+  border: 2px dashed rgba(255, 236, 180, 0.75);
+  background: rgba(255, 236, 180, 0.15);
+}
+
+html.debug-hotspots .hotspot.done {
+  border-style: solid;
+  border-color: rgba(120, 200, 150, 0.85);
+  background: rgba(80, 160, 120, 0.2);
+}
+
+html.debug-hotspots .hotspot.locked {
+  border-color: rgba(220, 120, 80, 0.85);
+  background: rgba(180, 80, 40, 0.18);
+}
+
+html.debug-hotspots .hotspot-label {
+  display: block;
+  position: absolute;
+  /* Libellé au centre du rectangle (pas sous le bord bas) */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #f4e9d8;
+  text-shadow: 0 1px 2px #000;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+}
+
+/* Panneaux bas */
+.scene-ui {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  pointer-events: none;
+}
+
+.scene-ui > * {
+  pointer-events: auto;
+}
+
+/* Empêche les clics de traverser une boîte de dialogue / exercice */
+.ui-blocker {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: transparent;
+  touch-action: none;
+}
+
+.euclide-notebook-bubble {
+  position: relative;
+  margin: 0.65rem 0 0.35rem;
+  padding: 0.55rem 0.75rem;
+  background: #fffdf6;
+  border: 2px solid var(--sea);
+  border-radius: 12px 12px 12px 4px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.euclide-notebook-bubble::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: -8px;
+  border: 8px solid transparent;
+  border-bottom-color: var(--sea);
+}
+
+.euclide-notebook-bubble::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: -5px;
+  border: 6px solid transparent;
+  border-bottom-color: #fffdf6;
+}
+
+.exercise-illustration {
+  display: block;
+  max-width: 100%;
+  max-height: 28vh;
+  width: auto;
+  height: auto;
+  margin: 0.5rem auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--sand);
+  background: #fff;
+}
+
+/* Ancrage bas exclusif : left + bottom + translateX(-50%) seulement.
+   Ne jamais combiner avec top ou translateY(-100%). */
+.grounded-object,
+.decor-object.anchor-bottom,
+.hotspot-object.anchor-bottom {
+  top: auto !important;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.part-transition-card {
+  margin-top: 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 2px solid var(--sea);
+  border-radius: 12px;
+  background: #f4fafc;
+  text-align: center;
+}
+
+.part-transition-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: var(--sea-deep);
+}
+
+.waiting-part-panel {
+  max-width: min(520px, 94vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.waiting-part-panel h2 {
+  margin: 0 0 0.5rem;
+  color: var(--sea-deep);
+}
+
+/* Accessibilité : contenu non visible mais annoncé */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.exercise-panel.illustration-primary .field-hint,
+.exercise-panel.illustration-primary .prompt-duplicate {
+  /* doublons masqués ; accessibles via sr-only */
+}
+
+.exercise-answer-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.exercise-answer-row input {
+  flex: 1 1 8rem;
+  min-width: 6rem;
+}
+
+.btn-sqrt-insert {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.fragment-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(8, 20, 28, 0.72);
+  padding: 1rem;
+}
+
+.fragment-zoom-overlay img {
+  max-width: min(70vw, 420px);
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  background: #1a1208;
+}
+
+.fragment-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+  max-width: min(92vw, 520px);
+  padding: 0.75rem;
+  background: rgba(248, 242, 228, 0.95);
+  border: 3px solid var(--sea-deep);
+  border-radius: 12px;
+}
+
+.fragment-board-slot {
+  aspect-ratio: 1;
+  border: 2px dashed #8a7a5a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+  position: relative;
+}
+
+.fragment-board-slot.filled {
+  border-style: solid;
+  border-color: var(--sea);
+}
+
+.fragment-board-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fragment-board-slot .slot-empty {
+  font-size: 0.75rem;
+  color: #6a5a4a;
+  text-align: center;
+  padding: 0.25rem;
+}
+
+.fragment-board-status {
+  text-align: center;
+  font-weight: 700;
+  color: var(--sea-deep);
+  margin: 0;
+}
+
+.dialogue-panel,
+.quiz-panel,
+.exercise-panel,
+.cloze-panel,
+.notebook-panel,
+.end-panel {
+  background: var(--panel);
+  color: var(--ink);
+  border: 3px solid var(--sea-deep);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow);
+  max-height: 48vh;
+  overflow: auto;
+  max-width: min(760px, 96vw);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dialogue-row {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.dialogue-portrait-wrap {
+  flex: 0 0 auto;
+}
+
+.dialogue-portrait {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+  border: 3px solid var(--sea);
+  background: #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.dialogue-portrait.placeholder {
+  display: block;
+  background: linear-gradient(145deg, #c4a574, #e6d5bc);
+}
+
+.dialogue-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.dialogue-speaker {
+  font-weight: 700;
+  color: var(--sea);
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dialogue-text {
+  margin: 0 0 0.75rem;
+}
+
+.dialogue-choices,
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* Vrais boutons tactiles (pas des champs) */
+.btn-touch {
+  min-height: var(--touch-min);
+  touch-action: manipulation;
+}
+
+.btn-choice {
+  text-align: left;
+  background: linear-gradient(180deg, #fff 0%, #f0e6d4 100%);
+  border: 2px solid var(--sea);
+  color: var(--ink);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 2px 0 #0f3d4f;
+}
+
+.btn-choice:hover,
+.btn-choice:focus-visible {
+  background: #e3f0f5;
+}
+
+.btn-choice:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #0f3d4f;
+}
+
+.btn-choice.selected {
+  border-color: var(--gold);
+  background: #fff6d8;
+  box-shadow: 0 0 0 2px rgba(184, 134, 11, 0.35);
+}
+
+.btn-choice.wrong {
+  border-color: #c07070;
+  background: #f8e8e8;
+  opacity: 0.72;
+  text-decoration: line-through;
+}
+
+.btn-choice.correct {
+  border-color: var(--ok);
+  background: #e5f5ea;
+}
+
+.btn-choice:disabled.wrong {
+  cursor: default;
+}
+
+.quiz-question {
+  margin: 0 0 0.5rem;
+}
+
+.math-block {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--sand);
+  overflow-x: auto;
+}
+
+.figure-box {
+  margin: 0.5rem 0;
+  padding: 0.4rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--sand);
+  text-align: center;
+  max-height: 28vh;
+  overflow: auto;
+}
+
+.figure-box svg {
+  max-width: 100%;
+  height: auto;
+  max-height: 26vh;
+}
+
+.figure-box.enlarged {
+  max-height: 45vh;
+}
+
+.figure-box.enlarged svg {
+  max-height: 42vh;
+}
+
+.feedback {
+  margin: 0.6rem 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+}
+
+.feedback.ok {
+  background: #e5f5ea;
+  color: var(--ok);
+  border: 1px solid #a3d4b3;
+}
+
+.feedback.ko {
+  background: #fde8e8;
+  color: var(--danger);
+  border: 1px solid #e8b4b4;
+}
+
+.flavor {
+  font-style: italic;
+  margin: 0.35rem 0 0;
+  color: var(--ink-soft);
+}
+
+.hint-box {
+  background: #fff8e6;
+  border: 1px solid #e0c87a;
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.hint-box.maki-hint {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+}
+
+.hint-portrait {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center;
+  border: 2px solid var(--sea);
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.hint-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.hint-body p {
+  margin: 0 0 0.25rem;
+}
+
+.correction-box {
+  margin: 0.5rem 0;
+  padding: 0.65rem 0.75rem;
+  background: #e8f2f6;
+  border: 1px solid #a8c9d6;
+  border-radius: 8px;
+}
+
+.correction-box p {
+  margin: 0.2rem 0;
+  white-space: pre-line;
+}
+
+.correction-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.correction-header .dialogue-speaker {
+  margin: 0;
+}
+
+.hint-lock-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.correction-box.mild {
+  background: #fff8e6;
+  border-color: #e0c87a;
+}
+
+.correction-box .dialogue-speaker {
+  margin-bottom: 0.25rem;
+}
+
+.quiz-panel .figure-box,
+.exercise-panel .figure-box,
+.cloze-panel .figure-box {
+  max-height: 36vh;
+}
+
+/* Rédaction à trous (réciproque) */
+.cloze-panel {
+  max-height: 55vh;
+}
+
+.cloze-prompt {
+  margin: 0.25rem 0 0.65rem;
+  white-space: pre-line;
+}
+
+.cloze-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.cloze-heading {
+  font-weight: 700;
+  color: var(--sea-deep);
+  margin: 0.45rem 0 0.15rem;
+}
+
+.cloze-line,
+.cloze-text {
+  margin: 0;
+  line-height: 1.55;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Cellule compacte : ne prend jamais toute la largeur */
+.cloze-field {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  vertical-align: middle;
+  max-width: 240px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.cloze-input {
+  box-sizing: border-box;
+  width: 80px;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 2.4rem;
+  padding: 0.3rem 0.4rem;
+  border: 2px solid var(--sea);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  background: #fffef8;
+  color: var(--ink);
+}
+
+.cloze-input.cloze-input--num {
+  width: 80px;
+  max-width: 90px;
+}
+
+.cloze-input.cloze-input--short {
+  width: 140px;
+  max-width: 160px;
+}
+
+.cloze-input.cloze-input--medium {
+  width: 200px;
+  max-width: 240px;
+}
+
+.cloze-field-error-msg {
+  display: none;
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #b00020;
+  line-height: 1.2;
+}
+
+.cloze-field.is-error .cloze-field-error-msg {
+  display: block;
+}
+
+.cloze-field.is-error .cloze-input,
+.cloze-field.is-error .cloze-seg {
+  border-color: #c62828;
+  background: #fdecea;
+  box-shadow: 0 0 0 1px #e57373;
+}
+
+.cloze-field.is-error .cloze-seg {
+  border: 2px solid #c62828;
+  border-radius: 8px;
+  padding: 0.15rem;
+  background: #fdecea;
+}
+
+.cloze-seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  vertical-align: middle;
+  max-width: 240px;
+}
+
+.cloze-seg-btn {
+  min-height: 2.2rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.cloze-seg-btn.selected {
+  background: var(--sea);
+  color: #fff;
+  border-color: var(--sea-deep);
+}
+
+.cloze-field-echo {
+  display: inline-block;
+  min-width: 1.6rem;
+  padding: 0.1rem 0.35rem;
+  border-bottom: 2px dashed var(--sea);
+  font-weight: 700;
+  color: var(--sea-deep);
+  text-align: center;
+}
+
+/* Fractions verticales dans les rédactions à trous (Thalès, etc.) */
+.cloze-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0 0.35rem;
+  min-width: 2.4rem;
+  line-height: 1.15;
+}
+
+.cloze-frac-num,
+.cloze-frac-den {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cloze-frac-bar {
+  display: block;
+  width: 100%;
+  min-width: 2.6rem;
+  height: 0;
+  border-top: 2px solid var(--ink);
+  margin: 0.12rem 0;
+}
+
+.cloze-frac .cloze-field {
+  margin: 0;
+}
+
+.cloze-frac .cloze-input {
+  width: 3.2rem;
+  max-width: 4.2rem;
+  min-height: 2rem;
+  font-size: 0.9rem;
+}
+
+.cloze-illustrations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.cloze-illustration {
+  /* Au moins ×2 par rapport à l’ancien plafond 220px / 28vh */
+  max-width: min(48%, 460px);
+  max-height: 56vh;
+  width: auto;
+  min-width: min(42%, 280px);
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fffef8;
+  border: 1px solid rgba(26, 95, 122, 0.25);
+}
+
+.cloze-zoom-row {
+  width: 100%;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+/* Angles chapeautés et maths inline dans énoncés / corrections cloze */
+.cloze-prompt .math-inline,
+.cloze-field-label .math-inline,
+.euclide-correction .math-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.05em;
+}
+
+.cloze-prompt p {
+  margin: 0.35rem 0;
+}
+
+/* Zoom schéma cloze / exercices — couvre stage + panneau UI */
+.diagram-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background: rgba(8, 20, 28, 0.78);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.diagram-zoom-overlay .diagram-zoom-image,
+.diagram-zoom-overlay img {
+  max-width: min(94vw, 960px);
+  max-height: min(78vh, 820px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
+  background: #fffef8;
+  border: 1px solid rgba(244, 233, 216, 0.35);
+}
+
+.diagram-zoom-overlay #btn-zoom-close {
+  min-width: 8rem;
+}
+
+.prompt-touch {
+  align-self: center;
+  background: rgba(15, 40, 51, 0.88);
+  color: var(--paper);
+  border: 1px dashed var(--sand);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+  max-width: 92vw;
+  text-align: center;
+}
+
+.notebook-panel {
+  max-height: 52vh;
+}
+
+.notebook-diagram,
+.figure-box .notebook-diagram {
+  display: block;
+  max-width: min(100%, 520px);
+  max-height: 42vh;
+  width: auto;
+  height: auto;
+  margin: 0.5rem auto;
+  object-fit: contain;
+  background: #fffef8;
+  border-radius: 8px;
+  border: 1px solid rgba(26, 95, 122, 0.2);
+}
+
+.figure-box.enlarged .notebook-diagram {
+  max-width: min(100%, 720px);
+  max-height: 70vh;
+}
+
+.notebook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.notebook-header h2 {
+  margin: 0;
+  color: var(--sea-deep);
+  font-size: 1.15rem;
+}
+
+.notebook-page-ind {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.notebook-body {
+  max-height: 22vh;
+  overflow: auto;
+}
+
+.notebook-body p {
+  margin: 0 0 0.6rem;
+}
+
+.notebook-nav {
+  margin-top: 0.65rem;
+  flex-wrap: wrap;
+}
+
+/* Overlays */
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 20, 28, 0.72);
+  padding: 1rem;
+}
+
+.overlay-card {
+  background: var(--panel);
+  border: 3px solid var(--sea-deep);
+  border-radius: 16px;
+  padding: 1rem;
+  max-width: min(520px, 94vw);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.overlay-image {
+  max-width: 100%;
+  max-height: 42vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+.overlay-text {
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+.transition-layer .transition-card {
+  position: relative;
+  width: min(720px, 96vw);
+  min-height: 50vh;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid var(--sea-deep);
+  background: #0f2833;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.transition-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+}
+
+.transition-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #f4e9d8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+  margin-bottom: 0.75rem;
+  background: rgba(15, 40, 51, 0.55);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.transition-text h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.transition-text p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.transition-card .btn-primary {
+  position: relative;
+  z-index: 1;
+}
+
+.top-tools {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 6;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.top-tools button {
+  min-height: 40px;
+  background: rgba(15, 40, 51, 0.75);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+}
+
+@media (orientation: landscape) {
+  .dialogue-portrait {
+    width: 96px;
+    height: 96px;
+  }
+
+  .dialogue-panel,
+  .quiz-panel,
+  .exercise-panel,
+  .notebook-panel {
+    max-height: 46vh;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .dialogue-portrait {
+    width: 88px;
+    height: 88px;
+  }
+
+  .notebook-body {
+    max-height: 16vh;
+  }
+}

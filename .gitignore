@@ -1,0 +1,12 @@
+node_modules/
+data/
+*.sqlite
+*.sqlite-*
+.env
+.DS_Store
+Thumbs.db
+client/vendor/katex/
+*.log
+coverage/
+dist/
+_pack_part7/

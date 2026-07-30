@@ -1,0 +1,103 @@
+/* Base accessible, tablette paysage en priorité */
+:root {
+  --font-size-base: 1.125rem;
+  --touch-min: 48px;
+  --radius: 12px;
+  --space: 0.75rem;
+  --space-lg: 1.25rem;
+  --line: 1.45;
+  --focus: #1a5f7a;
+  --danger: #8b1e1e;
+  --ok: #1e5c38;
+  --shadow: 0 4px 16px rgba(20, 30, 40, 0.18);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line);
+  color: #1a1a1a;
+  background: #2c3e50;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: var(--touch-min);
+  min-width: var(--touch-min);
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+input[type="text"] {
+  min-height: var(--touch-min);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid #5c6b73;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Agrandissement texte (accessibilité) */
+html.text-lg {
+  font-size: 112.5%;
+}
+
+html.text-xl {
+  font-size: 125%;
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  :root {
+    --font-size-base: 1rem;
+    --touch-min: 44px;
+  }
+}

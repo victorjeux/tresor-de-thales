@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" rx="24" fill="#f7edd4"/>
+  <rect x="8" y="8" width="1184" height="504" rx="20" fill="#fbf4e3" stroke="#d8b56f" stroke-width="3"/>
+
+  <!-- Sol -->
+  <path d="M60 250 Q300 235 520 248 L520 470 Q300 485 60 470 Z" fill="#8b5a3c"/>
+  <path d="M680 248 Q900 235 1140 250 L1140 470 Q900 485 680 470 Z" fill="#8b5a3c"/>
+  <path d="M520 248 L680 248 L680 470 L520 470 Z" fill="#6e432c"/>
+  <!-- Herbe -->
+  <path d="M60 250 Q300 235 520 248" fill="none" stroke="#6a9a4e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M680 248 Q900 235 1140 250" fill="none" stroke="#6a9a4e" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Ouverture citerne -->
+  <ellipse cx="600" cy="252" rx="82" ry="14" fill="#c4a484" stroke="#5b381c" stroke-width="3"/>
+  <path d="M518 252 L518 400 Q600 430 682 400 L682 252" fill="#4a3020" stroke="#5b381c" stroke-width="3"/>
+  <ellipse cx="600" cy="400" rx="70" ry="12" fill="#2a1a12" opacity="0.55"/>
+
+  <!-- Ligne de visée (sécante) -->
+  <line x1="780" y1="120" x2="530" y2="400" stroke="#2b261f" stroke-width="3" stroke-dasharray="10 7"/>
+  <!-- Point œil / bord / fond -->
+  <circle cx="780" cy="120" r="6" fill="#fff" stroke="#2b261f" stroke-width="2"/>
+  <circle cx="680" cy="248" r="6" fill="#fff" stroke="#2b261f" stroke-width="2"/>
+  <circle cx="530" cy="400" r="6" fill="#fff" stroke="#2b261f" stroke-width="2"/>
+
+  <!-- Cotes horizontales -->
+  <!-- 1,20 m ouverture -->
+  <line x1="520" y1="210" x2="680" y2="210" stroke="#1f6f9f" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <line x1="520" y1="210" x2="520" y2="248" stroke="#1f6f9f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="680" y1="210" x2="680" y2="248" stroke="#1f6f9f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="600" y="198" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" font-weight="700" fill="#1f6f9f">1,20 m</text>
+
+  <!-- 1,00 m distance au bord -->
+  <line x1="680" y1="180" x2="780" y2="180" stroke="#1f6f9f" stroke-width="2.5"/>
+  <polygon points="680,180 692,174 692,186" fill="#1f6f9f"/>
+  <polygon points="780,180 768,174 768,186" fill="#1f6f9f"/>
+  <text x="730" y="168" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" font-weight="700" fill="#1f6f9f">1,00 m</text>
+
+  <!-- 1,50 m hauteur de l'œil -->
+  <line x1="820" y1="120" x2="820" y2="248" stroke="#1f6f9f" stroke-width="2.5"/>
+  <polygon points="820,120 814,132 826,132" fill="#1f6f9f"/>
+  <polygon points="820,248 814,236 826,236" fill="#1f6f9f"/>
+  <text x="870" y="190" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" font-weight="700" fill="#1f6f9f">1,50 m</text>
+
+  <!-- p profondeur (inconnue) -->
+  <line x1="500" y1="252" x2="500" y2="400" stroke="#b33a2b" stroke-width="3"/>
+  <polygon points="500,252 494,264 506,264" fill="#b33a2b"/>
+  <polygon points="500,400 494,388 506,388" fill="#b33a2b"/>
+  <text x="475" y="335" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="28" font-weight="700" fill="#1f4f7a">p</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1f6f9f"/>
+    </marker>
+  </defs>
+
+  <text x="600" y="500" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="18" fill="#5b381c">Schéma d’énoncé — profondeur p à déterminer</text>
+</svg>

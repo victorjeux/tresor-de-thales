@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7e7b7"/>
+      <stop offset="1" stop-color="#e0b96d"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fd0db"/>
+      <stop offset="1" stop-color="#537f8b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.24"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#1897a8"/>
+    </marker>
+    <marker id="arrowStart" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M 12 0 L 0 6 L 12 12 z" fill="#1897a8"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="900" fill="#fff8e8"/>
+  <text x="70" y="62" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#222">
+    <tspan x="70" dy="0">Les pieds d'une table à cartes sont posés sur le pont horizontal</tspan>
+    <tspan x="70" dy="42">d'un navire.</tspan>
+  </text>
+
+  <g transform="translate(78 120)" filter="url(#shadow)">
+    <rect x="0" y="0" width="1244" height="605" rx="28" fill="url(#paper)"/>
+    <path d="M0 420 C220 360 370 455 590 390 C825 322 965 402 1244 345 L1244 605 L0 605 Z" fill="url(#sea)" opacity="0.42"/>
+    <path d="M0 495 L1244 495 L1244 605 L0 605 Z" fill="#8b5a2b" opacity="0.88"/>
+    <g opacity="0.32" stroke="#5c3418" stroke-width="5">
+      <line x1="30" y1="526" x2="1214" y2="526"/>
+      <line x1="50" y1="570" x2="1194" y2="570"/>
+      <line x1="150" y1="495" x2="105" y2="605"/>
+      <line x1="360" y1="495" x2="315" y2="605"/>
+      <line x1="570" y1="495" x2="525" y2="605"/>
+      <line x1="780" y1="495" x2="735" y2="605"/>
+      <line x1="990" y1="495" x2="945" y2="605"/>
+    </g>
+
+    <!-- Tablette de navigation horizontale -->
+    <g>
+      <path d="M260 122 C435 105 640 106 823 122 L805 176 C622 162 455 162 276 176 Z" fill="#8c5829" stroke="#422511" stroke-width="8"/>
+      <path d="M310 116 C455 108 640 109 775 121 C735 146 374 148 310 116 Z" fill="#c58b43" opacity="0.7"/>
+      <path d="M386 110 C500 92 617 93 715 112 C678 132 421 133 386 110 Z" fill="#ead69a" stroke="#7b4e22" stroke-width="3"/>
+      <path d="M435 116 C490 108 565 111 617 122" fill="none" stroke="#94733d" stroke-width="3" stroke-dasharray="8 9"/>
+      <path d="M475 101 C492 110 506 120 525 126" fill="none" stroke="#94733d" stroke-width="3"/>
+      <path d="M630 101 C646 113 660 119 684 123" fill="none" stroke="#94733d" stroke-width="3"/>
+      <text x="505" y="152" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#4a2b14">carte du capitaine</text>
+    </g>
+
+    <!-- Support croise -->
+    <g stroke-linecap="round">
+      <line x1="325" y1="165" x2="770" y2="495" stroke="#6d3d1c" stroke-width="25"/>
+      <line x1="325" y1="165" x2="770" y2="495" stroke="#a66a2e" stroke-width="13"/>
+      <line x1="360" y1="495" x2="742" y2="165" stroke="#6d3d1c" stroke-width="25"/>
+      <line x1="360" y1="495" x2="742" y2="165" stroke="#a66a2e" stroke-width="13"/>
+      <circle cx="535" cy="321" r="18" fill="#3a2414" stroke="#d3a159" stroke-width="5"/>
+    </g>
+
+    <!-- Petits accessoires pirates -->
+    <g transform="translate(880 118)">
+      <ellipse cx="128" cy="305" rx="105" ry="30" fill="#4e2c16" opacity="0.25"/>
+      <path d="M40 270 L218 270 L195 340 L65 340 Z" fill="#7b3f1f" stroke="#3f2112" stroke-width="7"/>
+      <path d="M54 263 C76 205 179 204 204 263" fill="#a15a2a" stroke="#3f2112" stroke-width="7"/>
+      <path d="M81 262 C100 228 158 228 177 262" fill="none" stroke="#d0a46c" stroke-width="5"/>
+      <circle cx="129" cy="306" r="22" fill="#e7c86d" stroke="#5a351a" stroke-width="5"/>
+      <path d="M110 307 L148 307 M129 288 L129 325" stroke="#5a351a" stroke-width="4"/>
+    </g>
+
+    <!-- Cotes -->
+    <g font-family="Arial, sans-serif" font-size="28" font-weight="700">
+      <line x1="317" y1="182" x2="515" y2="320" stroke="#1897a8" stroke-width="6" marker-start="url(#arrowStart)" marker-end="url(#arrow)"/>
+      <text x="315" y="270" fill="#111" transform="rotate(35 315 270)">42 cm</text>
+
+      <line x1="552" y1="333" x2="748" y2="478" stroke="#1897a8" stroke-width="6" marker-start="url(#arrowStart)" marker-end="url(#arrow)"/>
+      <text x="641" y="379" fill="#111" transform="rotate(35 641 379)">70 cm</text>
+
+      <line x1="382" y1="480" x2="515" y2="338" stroke="#1897a8" stroke-width="6" marker-start="url(#arrowStart)" marker-end="url(#arrow)"/>
+      <text x="360" y="406" fill="#111" transform="rotate(-47 360 406)">54 cm</text>
+
+      <line x1="555" y1="306" x2="726" y2="178" stroke="#1897a8" stroke-width="6" marker-start="url(#arrowStart)" marker-end="url(#arrow)"/>
+      <text x="626" y="226" fill="#111" transform="rotate(-37 626 226)">32,4 cm</text>
+    </g>
+
+    <!-- Repere horizontal -->
+    <line x1="205" y1="168" x2="870" y2="168" stroke="#23150b" stroke-width="5"/>
+    <line x1="190" y1="495" x2="860" y2="495" stroke="#23150b" stroke-width="5"/>
+  </g>
+
+  <circle cx="93" cy="803" r="10" fill="#22a6b3"/>
+  <text x="120" y="805" font-family="Arial, sans-serif" font-size="31" fill="#222">
+    <tspan x="120" dy="0">D'après le schéma ci-dessus, la table à cartes du capitaine</tspan>
+    <tspan x="120" dy="39">est-elle horizontale ?</tspan>
+  </text>
+
+  <text x="70" y="865" font-family="Arial, sans-serif" font-size="24" fill="#5a4631">
+    Justifier la réponse en utilisant la réciproque du théorème de Thalès.
+  </text>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+<rect width="1080" height="700" fill="#fff7e0"/>
+<text x="540" y="55" text-anchor="middle" font-family="Arial" font-size="42" font-weight="700" fill="#693e19">Exercice guide</text>
+<line x1="540" y1="105" x2="230" y2="625" stroke="#533619" stroke-width="7"/>
+<line x1="540" y1="105" x2="850" y2="625" stroke="#533619" stroke-width="7"/>
+<line x1="370" y1="390" x2="710" y2="390" stroke="#127c95" stroke-width="7"/>
+<line x1="230" y1="625" x2="850" y2="625" stroke="#127c95" stroke-width="7"/>
+<circle cx="540" cy="105" r="8" fill="#c66919" stroke="#422712" stroke-width="2"/>
+<text x="540" y="81" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#342b20">A</text>
+<circle cx="370" cy="390" r="8" fill="#c66919" stroke="#422712" stroke-width="2"/>
+<text x="370" y="366" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#342b20">B</text>
+<circle cx="710" cy="390" r="8" fill="#c66919" stroke="#422712" stroke-width="2"/>
+<text x="710" y="366" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#342b20">C</text>
+<circle cx="230" cy="625" r="8" fill="#c66919" stroke="#422712" stroke-width="2"/>
+<text x="230" y="601" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#342b20">M</text>
+<circle cx="850" cy="625" r="8" fill="#c66919" stroke="#422712" stroke-width="2"/>
+<text x="850" y="601" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#342b20">N</text>
+<g transform="translate(401.8 215.7)">
+<rect x="-38.0" y="-20" width="76.0" height="32" rx="8" fill="#fff9e5" stroke="#be9046" stroke-width="1"/>
+<text x="0" y="-2" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="24" fill="#2b241b">5 m</text>
+</g>
+<g transform="translate(258.0 390.0)">
+<rect x="-47.0" y="-20" width="94.0" height="32" rx="8" fill="#fff9e5" stroke="#be9046" stroke-width="1"/>
+<text x="0" y="-2" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="24" fill="#2b241b">12 m</text>
+</g>
+<g transform="translate(678.2 215.7)">
+<rect x="-38.0" y="-20" width="76.0" height="32" rx="8" fill="#fff9e5" stroke="#be9046" stroke-width="1"/>
+<text x="0" y="-2" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="24" fill="#2b241b">7 m</text>
+</g>
+<g transform="translate(822.0 390.0)">
+<rect x="-65.0" y="-20" width="130.0" height="32" rx="8" fill="#fff9e5" stroke="#be9046" stroke-width="1"/>
+<text x="0" y="-2" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="24" fill="#2b241b">16,8 m</text>
+</g>
+</svg>

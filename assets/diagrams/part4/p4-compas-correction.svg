@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+<rect width="1080" height="700" fill="#fff8e5"/>
+<text x="540" y="52" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#7a461c">Correction - compas marin</text>
+<line x1="540" y1="105" x2="260" y2="610" stroke="#5b381c" stroke-width="18"/>
+<line x1="540" y1="105" x2="820" y2="610" stroke="#5b381c" stroke-width="18"/>
+<line x1="446.6666666666667" y1="273.3333333333333" x2="633.3333333333334" y2="273.3333333333333" stroke="#108098" stroke-width="10"/>
+<line x1="260" y1="610" x2="820" y2="610" stroke="#108098" stroke-width="10"/>
+<text x="540.0" y="249.3" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">x</text>
+<text x="540.0" y="650.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">ouverture = 6 cm</text>
+<text x="538.8" y="214.4" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">4 cm</text>
+<text x="398.8" y="466.9" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">8 cm</text>
+<text x="351.9" y="330.8" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">12 cm</text>
+</svg>

@@ -1,0 +1,798 @@
+{
+  "meta": {
+    "partId": "part3",
+    "title": "Partie 3 - Le moulin des formes semblables",
+    "startSceneId": "p3_0_arrivee_moulin",
+    "sceneOrder": [
+      "p3_0_arrivee_moulin",
+      "p3_1_decouverte_gabarits",
+      "p3_2_carnet_euclide",
+      "p3_3_exercices_application",
+      "p3_4_finale_roue_a_aube",
+      "p3_5_fragment_moulin",
+      "p3_6_conclusion"
+    ],
+    "endMessage": "La roue du Moulin des Marées tourne de nouveau. La route vers les parallèles est ouverte.",
+    "announceNext": "Partie 4 - Le théorème de Thalès : configuration emboîtee",
+    "nextPartId": "part4"
+  },
+  "scenes": [
+    {
+      "id": "p3_0_arrivee_moulin",
+      "title": "Le Moulin des Marées",
+      "requireInteraction": true,
+      "prompt": "Explore le Moulin des Marées. La roue à aube bloque le passage vers le canal.",
+      "next": "p3_1_decouverte_gabarits",
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-arrivee-moulin.png"
+      },
+      "hotspots": [
+        {
+          "id": "roue_a_aube",
+          "label": "Roue à aube",
+          "x": 70,
+          "y": 48,
+          "w": 21,
+          "h": 42,
+          "optional": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Nérée",
+              "text": "La roue force contre l'eau. Si elle casse davantage, le canal restera ferme."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Une pièce triangulaire manque dans sa charpente."
+            }
+          ]
+        },
+        {
+          "id": "passage_bloque",
+          "label": "Canal bloque",
+          "x": 30,
+          "y": 73,
+          "w": 20,
+          "h": 18,
+          "optional": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Le courant est calme, mais la vanne ne bougera pas tant que la roue restera bloquee."
+            }
+          ]
+        },
+        {
+          "id": "entree_atelier",
+          "label": "Entrer dans l'atelier",
+          "x": 84,
+          "y": 52,
+          "w": 13,
+          "h": 34,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Voici le Moulin des Marées. Quand sa roue tourne, elle ouvre la vanne du canal."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Pour l'instant, elle ne tourne plus du tout."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii..."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Une pièce de bois a casse dans la charpente de la roue."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Elle a une forme triangulaire. Et il y a un petit modèle pose sur l'établi."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Un petit modèle peut suffire a reconstruire une grande pièce, si les deux triangles ont la même forme."
+                }
+              ],
+              "nextSceneId": "p3_1_decouverte_gabarits"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3_1_decouverte_gabarits",
+      "title": "Les deux gabarits",
+      "requireInteraction": true,
+      "prompt": "Observe les deux triangles de bois. Ils n'ont ni la même taille, ni la même orientation : peuvent-ils quand même avoir la même forme ?",
+      "next": "p3_2_carnet_euclide",
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-atelier-gabarits.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "grande_piece",
+          "label": "Grande pièce",
+          "x": 38,
+          "y": 68,
+          "w": 22,
+          "h": 30,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Ce grand triangle de bois occupe bien la table."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Avant de donner un nom à cette situation, cherchons ce qui peut rester identique quand on agrandit ou quand on réduit un triangle."
+            }
+          ]
+        },
+        {
+          "id": "petit_gabarit",
+          "label": "Petit gabarit",
+          "x": 56,
+          "y": 70,
+          "w": 14,
+          "h": 14,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Le deuxième triangle est plus petit et il n'est pas tourné dans le même sens."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Pourtant, le charpentier semble vouloir s’en servir comme modèle."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Pourtant, quelque chose peut rester le même : la forme."
+            }
+          ]
+        }
+      ],
+      "onAllRequired": {
+        "type": "quiz",
+        "id": "p3_decouverte_qcm",
+        "question": "Pour savoir si deux triangles ont la même forme, qu’est-ce qu’il faut surtout comparer ?",
+        "options": [
+          {
+            "text": "Leurs angles de même mesure.",
+            "correct": true,
+            "success": "Exact. Deux triangles peuvent changer de taille ou d’orientation, mais garder les mêmes angles."
+          },
+          {
+            "text": "Leur position sur la table.",
+            "explanation": "Pas tout à fait. La position, le sens ou le matériau ne définissent pas la forme mathématique. Ce sont les angles qui nous intéressent."
+          },
+          {
+            "text": "Leur couleur ou le bois utilisé.",
+            "explanation": "Pas tout à fait. La position, le sens ou le matériau ne définissent pas la forme mathématique. Ce sont les angles qui nous intéressent."
+          }
+        ],
+        "nextSceneId": "p3_2_carnet_euclide"
+      }
+    },
+    {
+      "id": "p3_2_carnet_euclide",
+      "title": "Carnet d'Euclide",
+      "requireInteraction": true,
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-atelier-gabarits.png",
+        "objects": [
+          {
+            "image": "/assets/objects/part3/livret-euclide.png",
+            "alt": "Livret d’Euclide ouvert",
+            "x": 50,
+            "y": 58,
+            "w": 28,
+            "h": 26,
+            "z": 2
+          }
+        ]
+      },
+      "prompt": "Touche le livret d’Euclide pour la pause cahier.",
+      "hotspots": [
+        {
+          "id": "livret_euclide",
+          "label": "Livret d’Euclide",
+          "x": 50,
+          "y": 56,
+          "w": 26,
+          "h": 24,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Quand deux triangles ont leurs angles deux à deux de même mesure, on dit qu’ils sont semblables."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Ils peuvent ne pas avoir la même taille ou la même orientation."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Sortez votre cahier. Ce livret résume ce qu’il faut noter sur les triangles semblables."
+                }
+              ]
+            },
+            {
+              "type": "notebook",
+              "id": "p3_cours_triangles_semblables",
+              "title": "Triangles semblables",
+              "pages": [
+                {
+                  "title": "Définition",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Deux triangles sont semblables si leurs angles sont deux à deux de même mesure."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Autrement dit : ils ont la même forme, même s’ils n’ont pas la même taille ou la même orientation."
+                    }
+                  ]
+                },
+                {
+                  "title": "Comment le montrer ?",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Pour montrer que deux triangles sont semblables, il suffit souvent de vérifier deux paires d'angles de même mesure."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Le troisième angle sera alors automatiquement de même mesure, car la somme des angles d'un triangle vaut 180 degrés."
+                    }
+                  ]
+                },
+                {
+                  "title": "Conséquence sur les longueurs",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Si deux triangles sont semblables, alors les longueurs des côtés correspondants (côtés qui jouent le même rôle dans les deux triangles, car ils sont en face d'angles de même mesure) sont proportionnelles."
+                    },
+                    {
+                      "type": "text",
+                      "text": "On peut donc passer d'un triangle a l'autre avec un coefficient d'agrandissement ou de réduction."
+                    }
+                  ]
+                },
+                {
+                  "title": "Méthode",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "1. Repérer deux triangles semblables."
+                    },
+                    {
+                      "type": "text",
+                      "text": "2. Associer les côtés correspondants (côtés qui jouent le même rôle)."
+                    },
+                    {
+                      "type": "text",
+                      "text": "3. Trouver le coefficient."
+                    },
+                    {
+                      "type": "text",
+                      "text": "4. Multiplier ou diviser pour calculer la longueur manquante."
+                    }
+                  ]
+                }
+              ],
+              "verify": [
+                {
+                  "question": "Deux triangles semblables ont-ils forcément la même taille ?",
+                  "options": [
+                    {
+                      "text": "Non, ils ont la même forme.",
+                      "correct": true
+                    },
+                    {
+                      "text": "Oui, ils sont exactement superposables.",
+                      "explanation": "Des triangles semblables peuvent etre de tailles différentes."
+                    }
+                  ]
+                },
+                {
+                  "question": "Si deux triangles sont semblables, que peut-on dire des longueurs ?",
+                  "options": [
+                    {
+                      "text": "Les longueurs des côtés correspondants sont proportionnelles.",
+                      "correct": true
+                    },
+                    {
+                      "text": "Toutes les longueurs sont égales.",
+                      "explanation": "Elles sont proportionnelles, pas forcément égales."
+                    }
+                  ]
+                }
+              ],
+              "nextSceneId": "p3_3_exercices_application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3_3_exercices_application",
+      "title": "Les trois mini-moulins",
+      "requireInteraction": true,
+      "prompt": "Choisis les mini-moulins dans l'ordre que tu veux. Chaque mini-moulin ouvre un exercice.",
+      "next": "p3_4_finale_roue_a_aube",
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-table-exercices.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "mini_moulin_a",
+          "label": "Mini-moulin A",
+          "x": 23,
+          "y": 38,
+          "w": 16,
+          "h": 22,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p3_app_a",
+              "title": "Exercice A — Petite pale et grande pale",
+              "progressiveHelp": true,
+              "prompt": "Les triangles sont semblables. Petit triangle : 3, 4, 5. Grand triangle : 6, 8, ?. Trouve la longueur manquante.",
+              "fields": [
+                {
+                  "id": "coef",
+                  "label": "Coefficient",
+                  "expected": [
+                    "2"
+                  ],
+                  "size": "num"
+                },
+                {
+                  "id": "missing",
+                  "label": "Longueur manquante",
+                  "expected": [
+                    "10"
+                  ],
+                  "size": "num"
+                }
+              ],
+              "lines": [
+                "Les triangles sont semblables, donc les longueurs des côtés correspondants (côtés qui jouent le même rôle) sont proportionnelles.",
+                "On passe de 3 à 6 en multipliant par {{coef}}.",
+                "On vérifie aussi : 4 × {{coef}} = 8.",
+                "La longueur manquante vaut 5 × {{coef}} = {{missing}}."
+              ],
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Regarde comment passer de 3 à 6."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Vérifie que le même coefficient permet de passer de 4 à 8."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Applique ce coefficient au côté 5."
+                }
+              ],
+              "success": "Exact. Le coefficient est 2 et la longueur manquante vaut 10.",
+              "correction": [
+                "Les triangles sont semblables, donc les longueurs des côtés correspondants (côtés qui jouent le même rôle) sont proportionnelles.",
+                "On passe de 3 à 6 en multipliant par 2.",
+                "On vérifie aussi : 4 × 2 = 8.",
+                "La longueur manquante vaut 5 × 2 = 10."
+              ],
+              "setFlags": {
+                "p3_app_a_done": true
+              },
+              "completeScene": false
+            }
+          ]
+        },
+        {
+          "id": "mini_moulin_b",
+          "label": "Mini-moulin B",
+          "x": 76,
+          "y": 37,
+          "w": 16,
+          "h": 22,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p3_app_b",
+              "title": "Exercice B — Gabarit et pièce de roue",
+              "progressiveHelp": true,
+              "prompt": "Le petit gabarit a pour longueurs 4, 6 et 7. La grande pièce semblable a pour longueurs 12, 18 et ?. Trouve la longueur manquante.",
+              "fields": [
+                {
+                  "id": "coef",
+                  "label": "Coefficient",
+                  "expected": [
+                    "3"
+                  ],
+                  "size": "num"
+                },
+                {
+                  "id": "missing",
+                  "label": "Longueur manquante",
+                  "expected": [
+                    "21"
+                  ],
+                  "size": "num"
+                }
+              ],
+              "lines": [
+                "Les triangles sont semblables, donc les longueurs des côtés correspondants (côtés qui jouent le même rôle) sont proportionnelles.",
+                "On passe de 4 à 12 en multipliant par {{coef}}.",
+                "On vérifie aussi : 6 × {{coef}} = 18.",
+                "La longueur manquante vaut 7 × {{coef}} = {{missing}}."
+              ],
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Cherche le coefficient entre 4 et 12."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Contrôle ce coefficient avec 6 et 18."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Utilise-le sur la longueur 7."
+                }
+              ],
+              "success": "Exact. Le coefficient est 3 et la longueur manquante vaut 21.",
+              "correction": [
+                "Les triangles sont semblables, donc les longueurs des côtés correspondants (côtés qui jouent le même rôle) sont proportionnelles.",
+                "On passe de 4 à 12 en multipliant par 3.",
+                "On vérifie aussi : 6 × 3 = 18.",
+                "La longueur manquante vaut 7 × 3 = 21."
+              ],
+              "setFlags": {
+                "p3_app_b_done": true
+              },
+              "completeScene": false
+            }
+          ]
+        },
+        {
+          "id": "mini_moulin_c",
+          "label": "Mini-moulin C",
+          "x": 50,
+          "y": 56,
+          "w": 14,
+          "h": 20,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p3_app_c",
+              "title": "Exercice C — Sont-ils semblables ?",
+              "progressiveHelp": true,
+              "prompt": "On compare deux triangles.\nTriangle 1 : 3, 4, 5.\nTriangle 2 : 6, 8, 12.\nCes deux triangles sont-ils semblables ?",
+              "illustrations": [
+                "/assets/diagrams/part3/p3-exercice-c-non-semblables.png"
+              ],
+              "fields": {
+                "conclusion": {
+                  "kind": "select",
+                  "options": [
+                    "Oui",
+                    "Non"
+                  ],
+                  "expected": "Non",
+                  "label": "Semblables ?"
+                }
+              },
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Ces deux triangles sont-ils semblables ? "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusion"
+                    }
+                  ]
+                }
+              ],
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Compare les rapports des côtés qui se correspondent."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Calcule 6 ÷ 3, 8 ÷ 4 et 12 ÷ 5."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Si les trois rapports ne sont pas égaux, les triangles ne sont pas semblables."
+                }
+              ],
+              "success": "Non : les rapports ne sont pas tous égaux.",
+              "correction": "On compare les longueurs des côtés correspondants (côtés qui jouent le même rôle dans les deux triangles).\n6 / 3 = 2\n8 / 4 = 2\n12 / 5 = 2,4\nLes trois rapports ne sont pas égaux.\nDonc les longueurs ne sont pas proportionnelles.\nLes deux triangles ne sont pas semblables.",
+              "setFlags": {
+                "p3_app_c_done": true
+              },
+              "completeScene": false
+            }
+          ]
+        }
+      ],
+      "onAllRequired": {
+        "type": "dialogue",
+        "lines": [
+          {
+            "speaker": "Alizée",
+            "text": "Les trois modèles sont validés. On a vu des cas semblables… et un cas qui ne l’est pas."
+          },
+          {
+            "speaker": "Euclide",
+            "text": "Il ne reste qu’à reconstruire la pièce de la roue."
+          }
+        ],
+        "nextSceneId": "p3_4_finale_roue_a_aube"
+      }
+    },
+    {
+      "id": "p3_4_finale_roue_a_aube",
+      "title": "La pièce de la roue",
+      "requireInteraction": true,
+      "prompt": "Clique sur la pièce triangulaire pour réparer la roue à aube.",
+      "next": "p3_5_fragment_moulin",
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-roue-finale.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "piece_finale",
+          "label": "Pièce triangulaire",
+          "x": 78,
+          "y": 74,
+          "w": 20,
+          "h": 18,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p3_finale_roue",
+              "title": "Défi final — La pièce de la roue",
+              "progressiveHelp": false,
+              "prompt": "La petite pièce triangulaire a pour longueurs 2, 3 et 4.\nLa grande pièce est semblable à la petite pièce.\nLe côté correspondant au côté de longueur 2 mesure 8.\n\nCalcule les deux longueurs manquantes de la grande pièce.",
+              "illustrations": [
+                "/assets/diagrams/part3/p3-finale-petite-piece.png",
+                "/assets/diagrams/part3/p3-finale-grande-piece-a-trouver.png"
+              ],
+              "fields": {
+                "longueur_1": {
+                  "kind": "number",
+                  "expected": 12,
+                  "size": "num",
+                  "label": "Longueur manquante 1"
+                },
+                "longueur_2": {
+                  "kind": "number",
+                  "expected": 16,
+                  "size": "num",
+                  "label": "Longueur manquante 2"
+                }
+              },
+              "unorderedNumericFields": [
+                "longueur_1",
+                "longueur_2"
+              ],
+              "unorderedNumericExpected": [
+                12,
+                16
+              ],
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Longueur manquante 1 : "
+                    },
+                    {
+                      "type": "field",
+                      "id": "longueur_1"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Longueur manquante 2 : "
+                    },
+                    {
+                      "type": "field",
+                      "id": "longueur_2"
+                    }
+                  ]
+                }
+              ],
+              "hints": [],
+              "success": "La pièce est à la bonne échelle.",
+              "correction": "On passe de 2 à 8 en multipliant par 4.\nLe coefficient d’agrandissement est donc 4.\nLes autres longueurs sont :\n3 × 4 = 12\n4 × 4 = 16\nLes deux longueurs manquantes sont 12 et 16.",
+              "setFlags": {
+                "p3_finale_done": true
+              },
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "id": "p3_roue_reussite",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "La pièce s’emboîte parfaitement."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "La roue reprend son mouvement !"
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Les triangles semblables nous ont donné la bonne échelle."
+                }
+              ],
+              "nextSceneId": "p3_5_fragment_moulin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3_5_fragment_moulin",
+      "title": "Le troisième fragment",
+      "requireInteraction": true,
+      "prompt": "Récupère le troisième fragment de carte.",
+      "next": "p3_6_conclusion",
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-fragment-moulin.png"
+      },
+      "hotspots": [
+        {
+          "id": "fragment_3",
+          "label": "Fragment 3",
+          "image": "/assets/objects/part3/fragment-carte-3.png",
+          "x": 63,
+          "y": 50,
+          "w": 14,
+          "h": 16,
+          "required": true,
+          "sequence": [
+            {
+              "type": "fragmentZoom",
+              "id": "p3_fragment_zoom",
+              "image": "/assets/objects/part3/fragment-carte-3.png",
+              "text": "Un troisième morceau de la carte apparaît entre les planches du moulin."
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Le troisième fragment rejoint les deux premiers. La carte devient plus lisible."
+                }
+              ]
+            },
+            {
+              "type": "fragmentBoard",
+              "id": "p3_fragment_board",
+              "placeFragment": 3,
+              "total": 6,
+              "label": "Fragments récupérés : 3 / 6"
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Trois fragments sur six. Nous avons fait la moitié du chemin."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Les triangles semblables nous ont donne la bonne échelle. La suite nous mènera vers les parallèles."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Fragments récupérés : 3 / 6."
+                }
+              ],
+              "setFlags": {
+                "fragment3Collected": true,
+                "fragment_3": true
+              },
+              "registerFragment": 3,
+              "nextSceneId": "p3_6_conclusion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p3_6_conclusion",
+      "title": "Vers les parallèles",
+      "requireInteraction": false,
+      "decor": {
+        "background": "/assets/backgrounds/part3/p3-arrivee-moulin.png"
+      },
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p3_conclusion_dialogue",
+          "lines": [
+            {
+              "speaker": "Nérée",
+              "text": "La vanne s'ouvre. Le canal nous laisse passer."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Et maintenant ?"
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Maintenant, nous chercherons des droites parallèles. Elles révèlent des triangles cachés dans les figures."
+            },
+            {
+              "speaker": "Maki",
+              "text": "Krii !"
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Alors cap sur la prochaine île."
+            }
+          ],
+          "endPart": true,
+          "message": "Partie 3 terminée : le troisième fragment est en sécurité.",
+          "announce": "Partie 4 - Le théorème de Thalès : configuration emboîtee"
+        }
+      ]
+    }
+  ]
+}

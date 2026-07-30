@@ -1,0 +1,23 @@
+{
+  "name": "tresor-de-thales",
+  "version": "0.1.0",
+  "description": "Le Trésor de Thalès – Odyssée géométrique en mer (prototype pédagogique)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "postinstall": "node scripts/copy-katex.js",
+    "build": "node scripts/build-pages.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
+    "preview:pages": "npx --yes serve dist -l 4173"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "katex": "^0.16.21"
+  }
+}

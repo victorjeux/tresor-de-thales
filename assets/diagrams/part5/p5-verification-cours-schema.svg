@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+  <rect width="1080" height="700" fill="#fff8e5"/>
+  <text x="540" y="52" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="36" font-weight="700" fill="#7a461c">Vérification du cours</text>
+
+  <!-- Points : M haut-gauche, N haut-droite, A centre, C bas-gauche, B bas-droite -->
+  <!-- Triangle AMN (haut) -->
+  <polygon points="300,150 780,150 540,340" fill="#e8be76" fill-opacity="0.55" stroke="none"/>
+  <!-- Triangle ABC (bas) -->
+  <polygon points="300,550 780,550 540,340" fill="#82b9c3" fill-opacity="0.50" stroke="none"/>
+
+  <!-- Droites sécantes M—A—B et N—A—C -->
+  <line x1="300" y1="150" x2="780" y2="550" stroke="#5f401e" stroke-width="7" stroke-linecap="round"/>
+  <line x1="780" y1="150" x2="300" y2="550" stroke="#5f401e" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Parallèles MN et BC -->
+  <line x1="300" y1="150" x2="780" y2="150" stroke="#0f829b" stroke-width="7" stroke-linecap="round"/>
+  <line x1="300" y1="550" x2="780" y2="550" stroke="#0f829b" stroke-width="7" stroke-linecap="round"/>
+  <!-- Marques de parallélisme -->
+  <line x1="525" y1="135" x2="555" y2="135" stroke="#0f829b" stroke-width="4"/>
+  <line x1="525" y1="565" x2="555" y2="565" stroke="#0f829b" stroke-width="4"/>
+
+  <!-- Points -->
+  <circle cx="300" cy="150" r="10" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="780" cy="150" r="10" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="540" cy="340" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="300" cy="550" r="10" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="780" cy="550" r="10" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+
+  <!-- Noms des points -->
+  <text x="270" y="140" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="32" font-weight="700" fill="#2b261f">M</text>
+  <text x="810" y="140" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="32" font-weight="700" fill="#2b261f">N</text>
+  <text x="540" y="385" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">A</text>
+  <text x="270" y="590" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="32" font-weight="700" fill="#2b261f">C</text>
+  <text x="810" y="590" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="32" font-weight="700" fill="#2b261f">B</text>
+
+  <!-- Libellés MN / BC -->
+  <text x="540" y="175" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#0f829b">MN</text>
+  <text x="540" y="535" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#0f829b">BC</text>
+
+  <!-- Cotes numériques -->
+  <rect x="330" y="220" width="130" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="395" y="244" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#2b261f">AM = 3 cm</text>
+
+  <rect x="620" y="220" width="130" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="685" y="244" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#2b261f">AN = 5 cm</text>
+
+  <rect x="320" y="430" width="120" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="380" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#2b261f">AC = ?</text>
+
+  <rect x="620" y="430" width="140" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="690" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="22" fill="#2b261f">AB = 12 cm</text>
+</svg>

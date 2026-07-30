@@ -1,0 +1,232 @@
+/* Ambiance carnet d'explorateur / maritime */
+:root {
+  --paper: #f4e9d8;
+  --paper-dark: #e6d5bc;
+  --ink: #1c2a32;
+  --ink-soft: #3d4f5a;
+  --sea: #1a5f7a;
+  --sea-deep: #0f3d4f;
+  --sand: #c4a574;
+  --gold: #b8860b;
+  --panel: rgba(244, 233, 216, 0.96);
+}
+
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  background:
+    radial-gradient(ellipse at 20% 20%, #3d6b7a 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, #1a3a48 0%, transparent 45%),
+    linear-gradient(160deg, #1a3a48 0%, #0f2833 100%);
+  color: var(--paper);
+}
+
+/* Écran d’accueil : fond plein écran (cover) + panneau central lisible */
+.screen.screen-title {
+  background-color: #0f2833;
+  background-image: url('/assets/backgrounds/ecran-titre-tresor-thales-personnages.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* Zone centrale libre : le panneau reste au centre */
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+  padding: clamp(0.75rem, 3vw, 2rem);
+}
+
+.screen.screen-title .card-title-panel {
+  /* Lisibilité sur le fond illustré */
+  background: rgba(244, 233, 216, 0.94);
+  backdrop-filter: blur(2px);
+  max-width: min(36rem, 92vw);
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .screen.screen-title {
+    padding: 0.5rem 1rem;
+  }
+  .screen.screen-title .card-title-panel {
+    padding: 0.75rem 1.1rem;
+    max-height: 90dvh;
+    overflow: auto;
+  }
+  .screen.screen-title .card-title-panel h1 {
+    font-size: 1.35rem;
+  }
+  .screen.screen-title .card-title-panel p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.card {
+  background: var(--panel);
+  color: var(--ink);
+  border: 3px solid var(--sea-deep);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: var(--space-lg) calc(var(--space-lg) * 1.4);
+  max-width: 36rem;
+  width: 100%;
+}
+
+.card h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.65rem;
+  color: var(--sea-deep);
+  letter-spacing: 0.02em;
+}
+
+.card .subtitle {
+  margin: 0 0 1.25rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.card p {
+  margin: 0 0 1rem;
+}
+
+.btn-primary {
+  background: var(--sea);
+  color: #fff;
+  border-color: var(--sea-deep);
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background: var(--sea-deep);
+}
+
+.btn-secondary {
+  background: var(--paper-dark);
+  color: var(--ink);
+  border-color: var(--sand);
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+  background: var(--sand);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* TEMP TEST ONLY - remove before final release */
+.test-boot-panel {
+  margin-top: 1.1rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed rgba(139, 90, 0, 0.45);
+}
+
+.test-boot-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #8b5a00;
+  letter-spacing: 0.02em;
+}
+
+.test-boot-row {
+  margin-top: 0.35rem;
+}
+
+.btn-test-boot {
+  border-color: #c9a227;
+  background: linear-gradient(180deg, #fff8e6 0%, #f5e6b8 100%);
+  color: #5c3d00;
+  font-size: 0.92rem;
+}
+
+.btn-test-boot:hover,
+.btn-test-boot:active {
+  background: #f0d78c;
+}
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--ink);
+}
+
+.field-hint {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0.4rem 0 0.8rem;
+}
+
+.error-msg {
+  color: var(--danger);
+  background: #fde8e8;
+  border: 1px solid #e8b4b4;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+}
+
+.info-msg {
+  color: var(--sea-deep);
+  background: #e3f0f5;
+  border: 1px solid #a8c9d6;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  margin: 0.75rem 0;
+}
+
+.status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.85rem;
+  background: var(--sea-deep);
+  color: var(--paper);
+  font-size: 0.95rem;
+  min-height: var(--touch-min);
+}
+
+.status-bar .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.status-bar .badge.warn {
+  background: #8b5a00;
+}
+
+.status-bar #btn-debug {
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  min-height: 36px;
+  font-size: 0.85rem;
+}
+
+.text-size-controls {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.text-size-controls button {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  font-weight: 700;
+}

@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "partId": "part6",
+    "title": "Partie 6 - Reciproque du theoreme de Thales",
+    "startSceneId": "p6_0_cabinet_routes",
+    "sceneOrder": [
+      "p6_0_cabinet_routes",
+      "p6_1_activite_cordages",
+      "p6_2_carnet_reciproque",
+      "p6_3_exercice_guide",
+      "p6_4_balises_verification",
+      "p6_5_fragment_final"
+    ],
+    "endMessage": "La reciproque de Thales est maitrisee. Le sixieme fragment rejoint la carte.",
+    "announceNext": "Partie 7 - Bilan final"
+  },
+  "dialogueButtons": {
+    "p6_0_cabinet_routes": "Maki : Si la carte ment, je boude la boussole.",
+    "p6_1_activite_cordages": "Alizee : Deux cordages, quatre mesures... ca sent le piege proprement organise.",
+    "p6_2_carnet_reciproque": "Neree : En mer, presque parallele, ce n'est pas parallele.",
+    "p6_3_exercice_guide": "Maki : Je peux aider, mais je refuse de faire les divisions a ta place.",
+    "p6_4_balises_verification": "Euclide : Les rapports sont souvent plus fiables que l'oeil.",
+    "p6_5_fragment_final": "Maki : J'ai toujours cru en nous. Surtout apres avoir vu la reponse."
+  },
+  "assets": {
+    "backgrounds": {
+      "p6-0-cabinet-routes": "/assets/backgrounds/part6/p6-0-cabinet-routes.png",
+      "p6-1-activite-cordages": "/assets/backgrounds/part6/p6-1-activite-cordages.png",
+      "p6-2-carnet-reciproque": "/assets/backgrounds/part6/p6-2-carnet-reciproque.png",
+      "p6-3-exercice-guide-mats": "/assets/backgrounds/part6/p6-3-exercice-guide-mats.png",
+      "p6-4-haubans-mat": "/assets/backgrounds/part6/p6-4-haubans-mat.png",
+      "p6-5-routes-silas": "/assets/backgrounds/part6/p6-5-routes-silas.png",
+      "p6-6-passerelle-recif": "/assets/backgrounds/part6/p6-6-passerelle-recif.png",
+      "p6-7-table-cartes-pirate": "/assets/backgrounds/part6/p6-7-table-cartes-pirate.png",
+      "p6-8-fragment-final": "/assets/backgrounds/part6/p6-8-fragment-final.png"
+    },
+    "objects": {
+      "fragment6": "/assets/objects/part6/fragment-carte-6.png",
+      "fragment6Large": "/assets/objects/part6/fragment-carte-6-large.png"
+    }
+  },
+  "course": {
+    "title": "VI. Reciproque du theoreme de Thales",
+    "statement": [
+      "Soient deux droites secantes en A.",
+      "Les points A, B, M sont alignes dans le meme ordre.",
+      "Les points A, C, N sont alignes dans le meme ordre.",
+      "Si AM / AB = AN / AC, alors les droites (MN) et (BC) sont paralleles."
+    ],
+    "method": [
+      "Verifier les alignements.",
+      "Reperer les deux rapports a comparer.",
+      "Calculer les deux rapports separement.",
+      "Comparer les resultats.",
+      "Conclure sur le parallelisme."
+    ]
+  },
+  "exercises": [
+    {
+      "id": "intro",
+      "configuration": "emboitee",
+      "result": "parallele",
+      "values": [
+        "AB=4 m",
+        "AM=10 m",
+        "AC=6 m",
+        "AN=15 m"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-activite-cordages-schema.png"
+    },
+    {
+      "id": "guide",
+      "configuration": "emboitee",
+      "result": "parallele",
+      "values": [
+        "AB=5 m",
+        "AM=12 m",
+        "AC=7 m",
+        "AN=16,8 m"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-exercice-guide-schema.png"
+    },
+    {
+      "id": "A",
+      "configuration": "emboitee",
+      "result": "parallele",
+      "values": [
+        "AB=3 m",
+        "AM=7,5 m",
+        "AC=4 m",
+        "AN=10 m"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-exercice-a-schema.png"
+    },
+    {
+      "id": "B",
+      "configuration": "papillon",
+      "result": "pas parallele",
+      "values": [
+        "OA=6 cm",
+        "OM=10 cm",
+        "OB=8 cm",
+        "ON=15 cm"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-exercice-b-schema.png"
+    },
+    {
+      "id": "C",
+      "configuration": "emboitee",
+      "result": "pas parallele",
+      "values": [
+        "AB=3,6 m",
+        "AM=6 m",
+        "AC=4,8 m",
+        "AN=7,5 m"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-exercice-c-schema.png"
+    },
+    {
+      "id": "D",
+      "configuration": "papillon/supports croises",
+      "result": "parallele",
+      "values": [
+        "42 cm",
+        "70 cm",
+        "32,4 cm",
+        "54 cm"
+      ],
+      "diagram": "/assets/diagrams/part6/p6-exercice-d-table-schema.png"
+    }
+  ]
+}

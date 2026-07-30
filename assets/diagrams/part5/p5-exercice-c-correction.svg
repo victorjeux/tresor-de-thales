@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+<rect width="1080" height="700" fill="#fff8e5"/>
+<text x="540" y="50" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#7a461c">Correction — exercice C</text>
+<polygon points="420.0,230.0 660.0,230.0 540.0,330.0" fill="#f4dba3" opacity="0.42"/>
+<polygon points="180.0,630.0 900.0,630.0 540.0,330.0" fill="#d5edf3" opacity="0.50"/>
+<line x1="420.0" y1="230.0" x2="900.0" y2="630.0" stroke="#5a341b" stroke-width="7" stroke-linecap="round"/>
+<line x1="660.0" y1="230.0" x2="180.0" y2="630.0" stroke="#5a341b" stroke-width="7" stroke-linecap="round"/>
+<line x1="420.0" y1="230.0" x2="660.0" y2="230.0" stroke="#0a8199" stroke-width="7" stroke-linecap="round"/>
+<line x1="180.0" y1="630.0" x2="900.0" y2="630.0" stroke="#0a8199" stroke-width="7" stroke-linecap="round"/>
+<circle cx="420.0" cy="230.0" r="10" fill="#cf741e" stroke="#3c2412" stroke-width="3"/>
+<text x="388.0" y="215.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#101820">M</text>
+<circle cx="660.0" cy="230.0" r="10" fill="#cf741e" stroke="#3c2412" stroke-width="3"/>
+<text x="692.0" y="215.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#101820">N</text>
+<circle cx="540.0" cy="330.0" r="10" fill="#cf741e" stroke="#3c2412" stroke-width="3"/>
+<text x="540.0" y="379.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#101820">A</text>
+<circle cx="900.0" cy="630.0" r="10" fill="#cf741e" stroke="#3c2412" stroke-width="3"/>
+<text x="934.0" y="661.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#101820">B</text>
+<circle cx="180.0" cy="630.0" r="10" fill="#cf741e" stroke="#3c2412" stroke-width="3"/>
+<text x="146.0" y="661.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" fill="#101820">C</text>
+<rect x="331.0" y="281.0" width="158.0" height="42" rx="8" fill="#fffaf0" stroke="#d9b56b"/>
+<text x="410.0" y="310.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#101820">AM = 6 m</text>
+<rect x="591.0" y="281.0" width="158.0" height="42" rx="8" fill="#fffaf0" stroke="#d9b56b"/>
+<text x="670.0" y="310.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#101820">AN = 5 m</text>
+<rect x="642.5" y="485.0" width="175.0" height="42" rx="8" fill="#fffaf0" stroke="#d9b56b"/>
+<text x="730.0" y="514.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#101820">AB = 18 m</text>
+<rect x="262.5" y="485.0" width="175.0" height="42" rx="8" fill="#fffaf0" stroke="#d9b56b"/>
+<text x="350.0" y="514.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#101820">AC = 15 m</text>
+</svg>

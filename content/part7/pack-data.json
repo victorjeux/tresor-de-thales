@@ -1,0 +1,1268 @@
+{
+  "meta": {
+    "partId": "part7",
+    "title": "Partie 7 - Le dernier cap : le trésor de Thalès",
+    "startSceneId": "p7_0_carte_complete",
+    "sceneOrder": [
+      "p7_0_carte_complete",
+      "p7_1_pont_recif_silas",
+      "p7_2_lentille_gobelet_silas",
+      "p7_3_charpente_quai_silas",
+      "p7_4_sanctuaire_figure_complexe",
+      "p7_5_serrure_tresor",
+      "p7_6_conclusion_tresor"
+    ],
+    "endMessage": "Le trésor de Thalès est découvert. L'odyssée géométrique est terminée.",
+    "noNewCourse": true,
+    "designNote": "Quatre exercices sont adaptés de vrais sujets de brevet. Le cinquième est une synthèse finale originale pour refermer le jeu."
+  },
+  "dialogueButtons": {
+    "p7_0_carte_complete": "Maki : Six morceaux, une carte. Là, même ma boussole retient son souffle.",
+    "p7_1_pont_recif_silas": "Silas : Un trajet peut sembler sûr. Encore faut-il le prouver.",
+    "p7_2_lentille_gobelet_silas": "Maki : Quand la lumière fait des cônes, je range mes plumes et je sors Pythagore.",
+    "p7_3_charpente_quai_silas": "Euclide : Les charpentes ne mentent pas : elles s'effondrent quand on calcule mal.",
+    "p7_4_sanctuaire_figure_complexe": "Silas : Cette porte ne s'ouvre pas aux approximations.",
+    "p7_5_serrure_tresor": "Nérée : Dernière serrure. Dernière rédaction. Après, on respire.",
+    "p7_6_conclusion_tresor": "Alizée : On dirait que le vrai trésor tenait dans les preuves qu'on a apprises."
+  },
+  "assets": {
+    "backgrounds": {
+      "carte": "/assets/backgrounds/part7/p7-0-carte-assemblee.png",
+      "pontSilas": "/assets/backgrounds/part7/p7-1-pont-recit-silas.png",
+      "grotteSilas": "/assets/backgrounds/part7/p7-2-grotte-lentille-silas.png",
+      "charpenteSilas": "/assets/backgrounds/part7/p7-3-charpente-quai-silas.png",
+      "sanctuaireSilas": "/assets/backgrounds/part7/p7-4-sanctuaire-cordages-silas.png",
+      "serrureTresor": "/assets/backgrounds/part7/p7-5-serrure-tresor.png",
+      "conclusionTresor": "/assets/backgrounds/part7/p7-6-conclusion-tresor.png"
+    },
+    "diagrams": {
+      "ex1": "/assets/diagrams/part7/p7-exercice-1-aquathlon-schema.png",
+      "ex2": "/assets/diagrams/part7/p7-exercice-2-gobelet-schema.png",
+      "ex3": "/assets/diagrams/part7/p7-exercice-3-charpente-schema.png",
+      "ex4": "/assets/diagrams/part7/p7-exercice-4-sanctuaire-schema.png",
+      "ex5": "/assets/diagrams/part7/p7-exercice-5-serrure-schema.png"
+    }
+  },
+  "scenes": [
+    {
+      "id": "p7_0_carte_complete",
+      "title": "Les six fragments s'assemblent",
+      "requireInteraction": true,
+      "next": "p7_1_pont_recif_silas",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-0-carte-assemblee.png"
+      },
+      "prompt": "Observe la carte enfin complète. Le dernier trajet vers le trésor apparaît.",
+      "hotspots": [
+        {
+          "id": "carte_complete",
+          "label": "Carte complète",
+          "x": 50,
+          "y": 52,
+          "w": 44,
+          "h": 38,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Les six fragments répondent enfin les uns aux autres."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Regardez : les côtes, les récifs, les anciens phares... tout s'aligne."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "La carte indique un dernier trajet. Pas long, mais chaque étape réclamera une preuve."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Et quand il faut prouver, Silas n'est jamais loin."
+                },
+                {
+                  "speaker": "Silas",
+                  "text": "Je vous attendais. Si vous voulez le trésor, il faudra traverser mes quatre plans."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Alors avançons. Un cap, une preuve, puis le suivant."
+                }
+              ],
+              "nextSceneId": "p7_1_pont_recif_silas"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p7_1_pont_recif_silas",
+      "title": "Plan de Silas I - Le trajet du récif noir",
+      "source": "Adapté du DNB Métropole-Antilles-Guyane, 26 juin 2025, exercice 2, partie A.",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-1-pont-recit-silas.png"
+      },
+      "prompt": "Silas barre le passage sur le pont de corde. Résous l'exercice question par question pour ouvrir la route.",
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p7_ex1_intro",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Voici mon premier plan : un trajet sûr en apparence, mais rempli de fausses certitudes."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "On ne devine rien. On calcule AD, puis CD, puis on vérifie les parallèles."
+            }
+          ],
+          "nextStepId": "p7_ex1_q1_ad"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex1_q1_ad",
+          "title": "Exercice 1/5 - Question 1",
+          "prompt": "Silas a tracé le trajet ACDEB sur la carte du récif noir. Les points A, C, B sont alignés ; les points A, D, E sont alignés ; le triangle ADC est rectangle en A. On connaît AE = 250 m et DE = 50 m. Quelle est la longueur AD ?",
+          "fields": [
+            {
+              "id": "ad",
+              "label": "AD",
+              "expected": [
+                "200",
+                "200 m"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Les points A, D et E sont alignés, avec D entre A et E.",
+            "Donc AD = AE - DE.",
+            "AD = 250 - 50 = 200.",
+            "La longueur AD est donc 200 m."
+          ],
+          "hints": [
+            "D est placé sur le segment [AE].",
+            "On enlève la petite portion DE à la longueur AE."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "illustrations": [
+            "/assets/diagrams/part7/p7-exercice-1-aquathlon-schema.png"
+          ],
+          "nextStepId": "p7_ex1_q2_cd"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex1_q2_cd",
+          "title": "Exercice 1/5 - Question 2",
+          "prompt": "Dans le triangle ADC rectangle en A, on sait maintenant que AD = 200 m et AC = 480 m. Calcule la longueur CD.",
+          "fields": [
+            {
+              "id": "cd",
+              "label": "CD",
+              "expected": [
+                "520",
+                "520 m"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le triangle ADC est rectangle en A.",
+            "D'après le théorème de Pythagore : CD² = AD² + AC².",
+            "CD² = 200² + 480² = 40 000 + 230 400 = 270 400.",
+            "CD = √270 400 = 520.",
+            "La longueur CD est donc 520 m."
+          ],
+          "hints": [
+            "CD est l'hypoténuse.",
+            "Calcule 200² + 480²."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex1_q3_parallel"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex1_q3_parallel",
+          "title": "Exercice 1/5 - Question 3a",
+          "prompt": "Silas affirme que les segments (CD) et (BE) ne sont pas parallèles. Compare les rapports AC/AB et AD/AE, puis réponds oui ou non.",
+          "fields": [
+            {
+              "id": "r1",
+              "label": "AC/AB",
+              "expected": [
+                "0.8",
+                "0,8",
+                "0.80",
+                "0,80",
+                "4/5",
+                "48/60"
+              ],
+              "coherentGroup": "direct",
+              "size": "num"
+            },
+            {
+              "id": "r2",
+              "label": "AD/AE",
+              "expected": [
+                "0.8",
+                "0,8",
+                "0.80",
+                "0,80",
+                "4/5",
+                "48/60"
+              ],
+              "coherentGroup": "direct",
+              "size": "num"
+            },
+            {
+              "id": "parallel",
+              "label": "Parallèles ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "AB = AC + CB = 480 + 120 = 600.",
+            "AC/AB = 480/600 = 0,8.",
+            "AD/AE = 200/250 = 0,8.",
+            "Les points A, C, B sont alignés dans cet ordre et les points A, D, E sont alignés dans cet ordre.",
+            "Les rapports sont égaux, donc les droites (CD) et (BE) sont parallèles d'après la réciproque du théorème de Thalès."
+          ],
+          "hints": [
+            "N'oublie pas que AB = AC + CB.",
+            "On veut comparer deux rapports pris dans le même sens."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex1_q4_angle"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex1_q4_angle",
+          "title": "Exercice 1/5 - Question 3b",
+          "prompt": "Le trajet n'est accepté que si l'angle ACD est supérieur à 20°. Calcule sa mesure arrondie au dixième, puis réponds oui ou non.",
+          "fields": [
+            {
+              "id": "angle",
+              "label": "Angle ACD",
+              "expected": [
+                "22.6",
+                "22,6",
+                "23"
+              ],
+              "tolerance": 0.5,
+              "size": "num"
+            },
+            {
+              "id": "ok",
+              "label": "Supérieur à 20° ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Dans le triangle ADC rectangle en A, tan(ACD) = AD/AC.",
+            "tan(ACD) = 200/480 = 5/12.",
+            "La calculatrice donne ACD ≈ 22,6°.",
+            "22,6° est supérieur à 20°, donc la condition est vérifiée."
+          ],
+          "hints": [
+            "Utilise la tangente : côté opposé / côté adjacent.",
+            "Compare ensuite avec 20°."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex1_q5_valid"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex1_q5_valid",
+          "title": "Exercice 1/5 - Question 3c",
+          "prompt": "Les deux conditions sont-elles réunies pour valider le trajet du récif noir ?",
+          "fields": [
+            {
+              "id": "valid",
+              "label": "Trajet validé ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Les droites (CD) et (BE) sont parallèles.",
+            "L'angle ACD mesure environ 22,6°, donc il est supérieur à 20°.",
+            "Les deux conditions sont remplies : le trajet du récif noir est validé."
+          ],
+          "hints": [
+            "Relis les deux résultats précédents."
+          ],
+          "success": "Silas recule d'un pas. Premier plan brisé.",
+          "completeScene": false,
+          "nextStepId": "p7_ex1_transition",
+          "setFlags": {
+            "p7Exercise1Completed": true
+          }
+        },
+        {
+          "type": "dialogue",
+          "id": "p7_ex1_transition",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Bien. Vous savez suivre une route... pour l'instant."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Une preuve tient mieux qu'une menace."
+            },
+            {
+              "speaker": "Maki",
+              "text": "Et elle tangue moins qu'un pont de corde."
+            }
+          ],
+          "nextSceneId": "p7_2_lentille_gobelet_silas"
+        }
+      ],
+      "next": "p7_2_lentille_gobelet_silas"
+    },
+    {
+      "id": "p7_2_lentille_gobelet_silas",
+      "title": "Plan de Silas II - La lentille des deux cônes",
+      "source": "Adapté du DNB Asie-Pacifique, 15 juin 2026, exercice 2.",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-2-grotte-lentille-silas.png"
+      },
+      "prompt": "Dans la grotte, Silas utilise une lentille ancienne pour former deux cônes de lumière.",
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p7_ex2_intro",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Deux cônes, deux hauteurs, un seul passage."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Commençons par Pythagore, puis Thalès fera le lien entre les deux cônes."
+            }
+          ],
+          "nextStepId": "p7_ex2_q1_oa"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex2_q1_oa",
+          "title": "Exercice 2/5 - Question 1",
+          "prompt": "Dans la lentille, le triangle OAD est rectangle en A. On connaît OD = 8,2 cm et AD = 1,8 cm. Montre que OA = 8 cm.",
+          "fields": [
+            {
+              "id": "oa",
+              "label": "OA",
+              "expected": [
+                "8",
+                "8 cm"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le triangle OAD est rectangle en A.",
+            "D'après Pythagore : OD² = AD² + AO².",
+            "8,2² = 1,8² + AO².",
+            "AO² = 8,2² - 1,8² = 67,24 - 3,24 = 64.",
+            "AO = √64 = 8 cm."
+          ],
+          "hints": [
+            "OA est un côté de l'angle droit, pas l'hypoténuse."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "illustrations": [
+            "/assets/diagrams/part7/p7-exercice-2-gobelet-schema.png"
+          ],
+          "nextStepId": "p7_ex2_q2_parallel"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex2_q2_parallel",
+          "title": "Exercice 2/5 - Question 2",
+          "prompt": "Les segments (BC) et (AD) sont tous les deux perpendiculaires à la droite (BO). Peut-on conclure qu'ils sont parallèles ?",
+          "fields": [
+            {
+              "id": "parallel",
+              "label": "Parallèles ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Les droites (BC) et (AD) sont toutes les deux perpendiculaires à la même droite (BO).",
+            "Or deux droites perpendiculaires à une même droite sont parallèles.",
+            "Donc (BC) et (AD) sont parallèles."
+          ],
+          "hints": [
+            "Utilise la propriété des droites perpendiculaires à une même droite."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex2_q3_ob"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex2_q3_ob",
+          "title": "Exercice 2/5 - Question 3",
+          "prompt": "On sait que O, A, B sont alignés dans cet ordre, que O, D, C sont alignés dans cet ordre, et que (AD) // (BC). Avec AD = 1,8 cm et BC = 4,5 cm, calcule OB.",
+          "fields": [
+            {
+              "id": "ob",
+              "label": "OB",
+              "expected": [
+                "20",
+                "20 cm"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Les conditions du théorème de Thalès sont réunies.",
+            "On a OA/OB = AD/BC.",
+            "Donc 8/OB = 1,8/4,5.",
+            "OB = 4,5 × 8 / 1,8 = 20.",
+            "La longueur OB est 20 cm."
+          ],
+          "hints": [
+            "Écris le rapport avec les longueurs connues : 8/OB = 1,8/4,5."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex2_q4_volume_grand"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex2_q4_volume_grand",
+          "title": "Exercice 2/5 - Question 4a",
+          "prompt": "Le grand cône a pour rayon 4,5 cm et pour hauteur OB = 20 cm. Calcule son volume arrondi à l'unité.",
+          "fields": [
+            {
+              "id": "vg",
+              "label": "Volume grand cône",
+              "expected": [
+                "424",
+                "424 cm3",
+                "424 cm³",
+                "135pi",
+                "135π"
+              ],
+              "tolerance": 1,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le volume d'un cône est V = π × r² × h / 3.",
+            "V = π × 4,5² × 20 / 3.",
+            "V = 135π ≈ 424 cm³.",
+            "Le volume du grand cône est environ 424 cm³."
+          ],
+          "hints": [
+            "Utilise la formule du volume du cône."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex2_q5_volume_gobelet"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex2_q5_volume_gobelet",
+          "title": "Exercice 2/5 - Question 4b",
+          "prompt": "Le petit cône a pour rayon 1,8 cm et pour hauteur OA = 8 cm. Calcule le volume du gobelet, c'est-à-dire grand cône moins petit cône, arrondi à l'unité.",
+          "fields": [
+            {
+              "id": "volume",
+              "label": "Volume du gobelet",
+              "expected": [
+                "397",
+                "397 cm3",
+                "397 cm³"
+              ],
+              "tolerance": 1,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Volume du petit cône : π × 1,8² × 8 / 3 ≈ 27 cm³.",
+            "Volume du grand cône : environ 424 cm³.",
+            "Volume du gobelet : 424 - 27 = 397.",
+            "Le volume du gobelet est donc environ 397 cm³."
+          ],
+          "hints": [
+            "Calcule d'abord le petit cône, puis soustrais."
+          ],
+          "success": "La lentille s'aligne. Silas perd son deuxième plan.",
+          "completeScene": false,
+          "nextStepId": "p7_ex2_transition",
+          "setFlags": {
+            "p7Exercise2Completed": true
+          }
+        },
+        {
+          "type": "dialogue",
+          "id": "p7_ex2_transition",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Vous transformez même la lumière en calculs... agaçant."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Ce n'était pas la lumière. C'était Thalès."
+            }
+          ],
+          "nextSceneId": "p7_3_charpente_quai_silas"
+        }
+      ],
+      "next": "p7_3_charpente_quai_silas"
+    },
+    {
+      "id": "p7_3_charpente_quai_silas",
+      "title": "Plan de Silas III - La charpente du quai",
+      "source": "Adapté du DNB Amérique du Nord, 3 juin 2026, exercice 1.",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-3-charpente-quai-silas.png"
+      },
+      "prompt": "Silas a piégé une charpente de quai. Vérifie les triangles avant de poursuivre.",
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p7_ex3_intro",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Troisième plan : une charpente, des droites, et une erreur qui coûte cher."
+            },
+            {
+              "speaker": "Maki",
+              "text": "Krii. Je vote pour la rédaction complète avant de marcher dessus."
+            }
+          ],
+          "nextStepId": "p7_ex3_q1_rectangle"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex3_q1_rectangle",
+          "title": "Exercice 3/5 - Question 1",
+          "prompt": "Dans le triangle AED, on connaît AD = 7,3 cm, AE = 5,5 cm et ED = 4,8 cm. Le triangle AED est-il rectangle ? Si oui, en quel point ?",
+          "fields": [
+            {
+              "id": "point",
+              "label": "Point de l'angle droit",
+              "expected": [
+                "E",
+                "e"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Le plus grand côté est AD.",
+            "AD² = 7,3² = 53,29.",
+            "AE² + ED² = 5,5² + 4,8² = 30,25 + 23,04 = 53,29.",
+            "Donc AD² = AE² + ED².",
+            "D'après la réciproque du théorème de Pythagore, le triangle AED est rectangle en E."
+          ],
+          "hints": [
+            "Compare le carré du plus grand côté à la somme des carrés des deux autres."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "illustrations": [
+            "/assets/diagrams/part7/p7-exercice-3-charpente-schema.png"
+          ],
+          "nextStepId": "p7_ex3_q2_area"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex3_q2_area",
+          "title": "Exercice 3/5 - Question 2",
+          "prompt": "Calcule l'aire du triangle AED.",
+          "fields": [
+            {
+              "id": "aire",
+              "label": "Aire de AED",
+              "expected": [
+                "13.2",
+                "13,2",
+                "13.2 cm2",
+                "13,2 cm²"
+              ],
+              "tolerance": 0.1,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le triangle AED est rectangle en E.",
+            "Son aire vaut AE × ED / 2.",
+            "Aire = 5,5 × 4,8 / 2 = 13,2.",
+            "L'aire du triangle AED vaut 13,2 cm²."
+          ],
+          "hints": [
+            "Dans un triangle rectangle, utilise les deux côtés de l'angle droit."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex3_q3_parallel"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex3_q3_parallel",
+          "title": "Exercice 3/5 - Question 3",
+          "prompt": "Les droites (BC) et (ED) sont perpendiculaires à la même droite (BE). Sont-elles parallèles ?",
+          "fields": [
+            {
+              "id": "parallel",
+              "label": "Parallèles ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Les droites (BC) et (ED) sont perpendiculaires à la même droite (BE).",
+            "Donc elles sont parallèles.",
+            "On peut écrire (BC) // (ED)."
+          ],
+          "hints": [
+            "Deux droites perpendiculaires à une même droite sont parallèles."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex3_q4_ab"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex3_q4_ab",
+          "title": "Exercice 3/5 - Question 4",
+          "prompt": "On sait que (BC) // (ED), A appartient à [BE] et A appartient à [CD]. Avec AE = 5,5 cm, ED = 4,8 cm et BC = 7,2 cm, calcule AB.",
+          "fields": [
+            {
+              "id": "ab",
+              "label": "AB",
+              "expected": [
+                "8.25",
+                "8,25",
+                "8.25 cm",
+                "8,25 cm"
+              ],
+              "tolerance": 0.01,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "D'après le théorème de Thalès : AB/AE = BC/ED.",
+            "Donc AB/5,5 = 7,2/4,8.",
+            "7,2/4,8 = 1,5.",
+            "AB = 1,5 × 5,5 = 8,25.",
+            "La longueur AB vaut 8,25 cm."
+          ],
+          "hints": [
+            "Le coefficient d'agrandissement est 7,2 / 4,8."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex3_q5_angle"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex3_q5_angle",
+          "title": "Exercice 3/5 - Question 5",
+          "prompt": "Les angles ACB et ADE sont alternes-internes dans cette configuration. Si l'angle ACB mesure environ 49°, que vaut l'angle ADE ?",
+          "fields": [
+            {
+              "id": "angle",
+              "label": "Angle ADE",
+              "expected": [
+                "49",
+                "49°",
+                "49 degres",
+                "49 degrés"
+              ],
+              "tolerance": 1,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Les droites (BC) et (ED) sont parallèles.",
+            "Les angles ACB et ADE sont alternes-internes.",
+            "Ils ont donc la même mesure.",
+            "Comme ACB mesure environ 49°, l'angle ADE mesure environ 49°."
+          ],
+          "hints": [
+            "Des angles alternes-internes formés par des parallèles sont égaux."
+          ],
+          "success": "La charpente tient. Troisième plan de Silas neutralisé.",
+          "completeScene": false,
+          "nextStepId": "p7_ex3_transition",
+          "setFlags": {
+            "p7Exercise3Completed": true
+          }
+        },
+        {
+          "type": "dialogue",
+          "id": "p7_ex3_transition",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Vous avez même rendu mon piège stable."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "C'est souvent le destin des mauvaises charpentes : devenir de bons exercices."
+            }
+          ],
+          "nextSceneId": "p7_4_sanctuaire_figure_complexe"
+        }
+      ],
+      "next": "p7_4_sanctuaire_figure_complexe"
+    },
+    {
+      "id": "p7_4_sanctuaire_figure_complexe",
+      "title": "Plan de Silas IV - La figure complexe du sanctuaire",
+      "source": "Adapté du DNB Métropole, 30 juin 2026, exercice 2.",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-4-sanctuaire-cordages-silas.png"
+      },
+      "prompt": "Au seuil du sanctuaire, Silas joue son dernier plan avec une figure plus complète.",
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p7_ex4_intro",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Dernier plan. Celui-ci mélange tout : réciproque, Thalès, angles, aire."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "C'est donc un bon bilan."
+            }
+          ],
+          "nextStepId": "p7_ex4_q1_rectangle"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex4_q1_rectangle",
+          "title": "Exercice 4/5 - Question 1",
+          "prompt": "Dans la figure du sanctuaire, AB = 6,4 cm, AC = 4,8 cm et BC = 8 cm. Montre que le triangle ABC est rectangle en A.",
+          "fields": [
+            {
+              "id": "point",
+              "label": "Angle droit en",
+              "expected": [
+                "A",
+                "a"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Le plus grand côté est BC.",
+            "BC² = 8² = 64.",
+            "AB² + AC² = 6,4² + 4,8² = 40,96 + 23,04 = 64.",
+            "Donc BC² = AB² + AC².",
+            "D'après la réciproque de Pythagore, le triangle ABC est rectangle en A."
+          ],
+          "hints": [
+            "Compare 8² avec 6,4² + 4,8²."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "illustrations": [
+            "/assets/diagrams/part7/p7-exercice-4-sanctuaire-schema.png"
+          ],
+          "nextStepId": "p7_ex4_q2_thales"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex4_q2_thales",
+          "title": "Exercice 4/5 - Question 2",
+          "prompt": "Les droites (BD) et (CE) sont sécantes en A, et (BC) // (DE). On connaît AD = 4,8 cm. Calcule AE et DE.",
+          "fields": [
+            {
+              "id": "ae",
+              "label": "AE",
+              "expected": [
+                "3.6",
+                "3,6",
+                "3.6 cm",
+                "3,6 cm"
+              ],
+              "tolerance": 0.01,
+              "size": "num"
+            },
+            {
+              "id": "de",
+              "label": "DE",
+              "expected": [
+                "6",
+                "6 cm"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "D'après le théorème de Thalès : AB/AD = AC/AE = BC/DE.",
+            "On peut utiliser 6,4/4,8 comme coefficient de comparaison.",
+            "AE = 4,8 × 4,8 / 6,4 = 3,6 cm.",
+            "DE = 8 × 4,8 / 6,4 = 6 cm.",
+            "Donc AE = 3,6 cm et DE = 6 cm."
+          ],
+          "hints": [
+            "Pose les rapports de Thalès avec les deux triangles autour de A."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex4_q3_angles"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex4_q3_angles",
+          "title": "Exercice 4/5 - Question 3",
+          "prompt": "Explique si les angles ABC et ADE sont égaux.",
+          "fields": [
+            {
+              "id": "egal",
+              "label": "Égaux ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Les droites (BC) et (DE) sont parallèles.",
+            "Elles sont coupées par la sécante (BD).",
+            "Les angles ABC et ADE sont alternes-internes.",
+            "Ils sont donc égaux."
+          ],
+          "hints": [
+            "Repère la sécante (BD)."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex4_q4_similar"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex4_q4_similar",
+          "title": "Exercice 4/5 - Question 4",
+          "prompt": "Les triangles ABC et ADE sont-ils semblables ?",
+          "fields": [
+            {
+              "id": "semblables",
+              "label": "Semblables ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Les triangles ABC et ADE ont chacun un angle droit en A.",
+            "On vient de montrer que les angles ABC et ADE sont égaux.",
+            "Le troisième angle est donc aussi égal dans les deux triangles.",
+            "Les triangles ABC et ADE ont leurs angles deux à deux égaux.",
+            "Ils sont donc semblables."
+          ],
+          "hints": [
+            "Deux angles égaux suffisent pour conclure à des triangles semblables."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex4_q5_area"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex4_q5_area",
+          "title": "Exercice 4/5 - Question 5",
+          "prompt": "Calcule l'aire du quadrilatère BCDE.",
+          "fields": [
+            {
+              "id": "aire",
+              "label": "Aire BCDE",
+              "expected": [
+                "47.04",
+                "47,04",
+                "47.04 cm2",
+                "47,04 cm²"
+              ],
+              "tolerance": 0.01,
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "On décompose BCDE en quatre triangles rectangles : ABC, ABE, ADE et ACD.",
+            "Aire(ABC) = 6,4 × 4,8 / 2 = 15,36 cm².",
+            "Aire(ABE) = 6,4 × 3,6 / 2 = 11,52 cm².",
+            "Aire(ADE) = 4,8 × 3,6 / 2 = 8,64 cm².",
+            "Aire(ACD) = 4,8 × 4,8 / 2 = 11,52 cm².",
+            "Aire(BCDE) = 15,36 + 11,52 + 8,64 + 11,52 = 47,04 cm²."
+          ],
+          "hints": [
+            "Additionne les quatre triangles autour du point A."
+          ],
+          "success": "La porte du sanctuaire s'ouvre. Silas n'a plus de plan.",
+          "completeScene": false,
+          "nextStepId": "p7_ex4_transition",
+          "setFlags": {
+            "p7Exercise4Completed": true,
+            "silasDefeated": true
+          }
+        },
+        {
+          "type": "dialogue",
+          "id": "p7_ex4_transition",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Quatre plans, quatre preuves... Je n'ai plus rien à poser entre vous et le coffre."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Alors il reste seulement la serrure."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Une dernière synthèse. Toutes les méthodes ensemble."
+            }
+          ],
+          "nextSceneId": "p7_5_serrure_tresor"
+        }
+      ],
+      "next": "p7_5_serrure_tresor"
+    },
+    {
+      "id": "p7_5_serrure_tresor",
+      "title": "La serrure du coffre",
+      "source": "Exercice original de synthèse finale pour le jeu.",
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-5-serrure-tresor.png"
+      },
+      "prompt": "Silas n'a plus de plan. Il reste cinq sceaux mathématiques à ouvrir.",
+      "steps": [
+        {
+          "type": "dialogue",
+          "id": "p7_ex5_intro",
+          "lines": [
+            {
+              "speaker": "Silas",
+              "text": "Je pourrais encore mentir. Mais la serrure, elle, ne ment pas."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Alors on termine proprement."
+            }
+          ],
+          "nextStepId": "p7_ex5_q1_bc"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex5_q1_bc",
+          "title": "Exercice 5/5 - Sceau I",
+          "prompt": "Sur la serrure, le triangle ABC est rectangle en A avec AB = 6 et AC = 8. Calcule BC.",
+          "fields": [
+            {
+              "id": "bc",
+              "label": "BC",
+              "expected": [
+                "10"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le triangle ABC est rectangle en A.",
+            "D'après Pythagore : BC² = AB² + AC².",
+            "BC² = 6² + 8² = 36 + 64 = 100.",
+            "BC = 10."
+          ],
+          "hints": [
+            "C'est le triplet classique 6-8-10."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "illustrations": [
+            "/assets/diagrams/part7/p7-exercice-5-serrure-schema.png"
+          ],
+          "nextStepId": "p7_ex5_q2_an"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex5_q2_an",
+          "title": "Exercice 5/5 - Sceau II",
+          "prompt": "On sait que A, B, M sont alignés, A, C, N sont alignés et (BC) // (MN). Avec AB = 6, AM = 15 et AC = 8, calcule AN.",
+          "fields": [
+            {
+              "id": "an",
+              "label": "AN",
+              "expected": [
+                "20"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "D'après Thalès : AM/AB = AN/AC.",
+            "AM/AB = 15/6 = 2,5.",
+            "AN = 2,5 × 8 = 20.",
+            "La longueur AN vaut 20."
+          ],
+          "hints": [
+            "Le coefficient d'agrandissement est 15/6."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex5_q3_mn"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex5_q3_mn",
+          "title": "Exercice 5/5 - Sceau III",
+          "prompt": "Avec le même coefficient d'agrandissement, calcule MN.",
+          "fields": [
+            {
+              "id": "mn",
+              "label": "MN",
+              "expected": [
+                "25"
+              ],
+              "size": "num"
+            }
+          ],
+          "correction": [
+            "Le coefficient d'agrandissement de ABC vers AMN est 2,5.",
+            "On a BC = 10.",
+            "Donc MN = 2,5 × 10 = 25.",
+            "La longueur MN vaut 25."
+          ],
+          "hints": [
+            "Utilise le BC trouvé au sceau I."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex5_q4_reciproque"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex5_q4_reciproque",
+          "title": "Exercice 5/5 - Sceau IV",
+          "prompt": "Le petit triangle EFG a pour longueurs EF = 7, EG = 24 et FG = 25. Est-il rectangle ? Si oui, en quel point ?",
+          "fields": [
+            {
+              "id": "point",
+              "label": "Angle droit en",
+              "expected": [
+                "E",
+                "e"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "Le plus grand côté est FG.",
+            "FG² = 25² = 625.",
+            "EF² + EG² = 7² + 24² = 49 + 576 = 625.",
+            "Donc FG² = EF² + EG².",
+            "D'après la réciproque de Pythagore, le triangle EFG est rectangle en E."
+          ],
+          "hints": [
+            "Compare 25² avec 7² + 24²."
+          ],
+          "success": "Réponse validée. La rédaction complète s'affiche maintenant.",
+          "completeScene": false,
+          "nextStepId": "p7_ex5_q5_final"
+        },
+        {
+          "type": "cloze",
+          "id": "p7_ex5_q5_final",
+          "title": "Exercice 5/5 - Sceau V",
+          "prompt": "Dernière vérification : compare AM/AB et AN/AC. Les droites (BC) et (MN) sont-elles parallèles ?",
+          "fields": [
+            {
+              "id": "r1",
+              "label": "AM/AB",
+              "expected": [
+                "2.5",
+                "2,5",
+                "2.50",
+                "2,50"
+              ],
+              "coherentGroup": "grandPetit",
+              "size": "num"
+            },
+            {
+              "id": "r2",
+              "label": "AN/AC",
+              "expected": [
+                "2.5",
+                "2,5",
+                "2.50",
+                "2,50"
+              ],
+              "coherentGroup": "grandPetit",
+              "size": "num"
+            },
+            {
+              "id": "parallel",
+              "label": "Parallèles ?",
+              "expected": [
+                "oui",
+                "yes",
+                "o"
+              ],
+              "size": "short"
+            }
+          ],
+          "correction": [
+            "AM/AB = 15/6 = 2,5.",
+            "AN/AC = 20/8 = 2,5.",
+            "Les points A, B, M sont alignés dans le même ordre et les points A, C, N sont alignés dans le même ordre.",
+            "Les rapports sont égaux.",
+            "D'après la réciproque du théorème de Thalès, les droites (BC) et (MN) sont parallèles.",
+            "La serrure s'ouvre."
+          ],
+          "hints": [
+            "Garde le même sens dans les deux rapports."
+          ],
+          "success": "Le dernier mécanisme cède. Le coffre s'ouvre.",
+          "completeScene": false,
+          "nextStepId": "p7_ex5_transition",
+          "setFlags": {
+            "p7Exercise5Completed": true,
+            "treasureUnlocked": true
+          }
+        },
+        {
+          "type": "dialogue",
+          "id": "p7_ex5_transition",
+          "lines": [
+            {
+              "speaker": "Euclide",
+              "text": "Pythagore, Thalès, leurs réciproques : tout s'est répondu."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Alors ouvrons."
+            }
+          ],
+          "nextSceneId": "p7_6_conclusion_tresor"
+        }
+      ],
+      "next": "p7_6_conclusion_tresor"
+    },
+    {
+      "id": "p7_6_conclusion_tresor",
+      "title": "Le trésor de Thalès",
+      "requireInteraction": true,
+      "decor": {
+        "background": "/assets/backgrounds/part7/p7-6-conclusion-tresor.png"
+      },
+      "prompt": "Le coffre s'ouvre enfin. Découvre le trésor et termine l'aventure.",
+      "hotspots": [
+        {
+          "id": "coffre_tresor",
+          "label": "Coffre ouvert",
+          "x": 51,
+          "y": 50,
+          "w": 38,
+          "h": 42,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Ce n'est pas seulement de l'or... ce sont des instruments, des cartes, des carnets."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Le trésor de Thalès : des méthodes pour mesurer l'inaccessible."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Les anciens savaient qu'un bon théorème vaut mieux qu'un coffre fermé."
+                },
+                {
+                  "speaker": "Silas",
+                  "text": "Je pensais posséder la carte. Vous avez compris ce qu'elle demandait."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii ! Et moi, j'ai supervisé la partie la plus difficile : ne pas manger les parchemins."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "On rentre à Geometria. Cette fois, avec toutes les preuves."
+                }
+              ],
+              "setFlags": {
+                "part7Completed": true,
+                "gameCompleted": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exerciseSources": [
+    {
+      "scene": "p7_1_pont_recif_silas",
+      "source": "DNB Métropole-Antilles-Guyane, 26 juin 2025, exercice 2, partie A",
+      "url": "https://www.apmep.fr/IMG/pdf/Annee_2025_Brevet.pdf"
+    },
+    {
+      "scene": "p7_2_lentille_gobelet_silas",
+      "source": "DNB Asie-Pacifique, 15 juin 2026, exercice 2",
+      "url": "https://www.apmep.fr/IMG/pdf/DNB_generale_Corrige_2026-06-15_Asie_MD-v1.pdf"
+    },
+    {
+      "scene": "p7_3_charpente_quai_silas",
+      "source": "DNB Amérique du Nord, 3 juin 2026, exercice 1",
+      "url": "https://www.apmep.fr/IMG/pdf/DNB_generale_Corrige_2026-06-03_Amerique-du-Nord_LHPF-2.pdf"
+    },
+    {
+      "scene": "p7_4_sanctuaire_figure_complexe",
+      "source": "DNB Métropole, 30 juin 2026, exercice 2",
+      "url": "https://pi.ac3j.fr/wp-content/uploads/Traces/PDF/26GENMATME1.pdf"
+    }
+  ]
+}

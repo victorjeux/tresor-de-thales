@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+  <rect width="1080" height="700" fill="#fff8e5"/>
+  <text x="540" y="52" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#7a461c">Compas marin — schéma</text>
+  <!-- Branches du compas AM et AN -->
+  <line x1="540" y1="105" x2="260" y2="610" stroke="#5b381c" stroke-width="18" stroke-linecap="round"/>
+  <line x1="540" y1="105" x2="820" y2="610" stroke="#5b381c" stroke-width="18" stroke-linecap="round"/>
+  <!-- Tige BC (parallèle à MN) -->
+  <line x1="446.67" y1="273.33" x2="633.33" y2="273.33" stroke="#108098" stroke-width="10" stroke-linecap="round"/>
+  <!-- Ouverture MN -->
+  <line x1="260" y1="610" x2="820" y2="610" stroke="#108098" stroke-width="10" stroke-linecap="round"/>
+  <!-- Arc d'ouverture (indicatif, sans valeur) -->
+  <path d="M 360 560 Q 540 500 720 560" fill="none" stroke="#d4a24c" stroke-width="3" stroke-dasharray="8 6"/>
+  <!-- Points -->
+  <circle cx="540" cy="105" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="446.67" cy="273.33" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="633.33" cy="273.33" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="260" cy="610" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <circle cx="820" cy="610" r="11" fill="#cb711c" stroke="#412613" stroke-width="2"/>
+  <!-- Labels points -->
+  <text x="540" y="90" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">A</text>
+  <text x="420" y="278" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">B</text>
+  <text x="660" y="278" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">C</text>
+  <text x="230" y="640" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">M</text>
+  <text x="850" y="640" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="34" font-weight="700" fill="#2b261f">N</text>
+  <!-- Cotes connues (énoncé) — sans révéler ouverture ni x -->
+  <rect x="470" y="168" width="100" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="520" y="192" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" fill="#2b261f">4 cm</text>
+  <rect x="490" y="238" width="100" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="540" y="262" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" font-weight="700" fill="#2b261f">x</text>
+  <rect x="292" y="300" width="120" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="352" y="324" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" fill="#2b261f">12 cm</text>
+  <rect x="338" y="430" width="100" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="388" y="454" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" fill="#2b261f">8 cm</text>
+  <rect x="430" y="630" width="220" height="34" rx="8" fill="#fff9e9" stroke="#d8b56f"/>
+  <text x="540" y="654" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" fill="#2b261f">ouverture = ?</text>
+</svg>

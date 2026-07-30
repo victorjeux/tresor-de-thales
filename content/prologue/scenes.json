@@ -1,0 +1,719 @@
+{
+  "meta": {
+    "partId": "prologue",
+    "title": "Prologue",
+    "startSceneId": "p0_port",
+    "sceneOrder": [
+      "p0_port",
+      "p1_chaloupe",
+      "p2_pont",
+      "p3_cabine",
+      "p4_lettre",
+      "p5_serment",
+      "p6_depart"
+    ],
+    "endMessage": "Le voyage vers le récif des Angles droits commencera bientôt.",
+    "announceNext": "Partie 1 — Le récif des Angles droits · Théorème de Pythagore"
+  },
+  "scenes": [
+    {
+      "id": "p0_port",
+      "title": "Le port de Géometria",
+      "requireInteraction": true,
+      "prompt": "Explorez le quai. Touchez le navire mystérieux pour avancer.",
+      "next": "p1_chaloupe",
+      "decor": {
+        "background": "/assets/backgrounds/port-geometria.png"
+      },
+      "hotspots": [
+        {
+          "id": "mouettes",
+          "label": "Mouettes",
+          "x": 68,
+          "y": 13,
+          "w": 14,
+          "h": 10,
+          "optional": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Marin",
+              "text": "Elles ont encore volé mon déjeuner !"
+            }
+          ]
+        },
+        {
+          "id": "caisse",
+          "label": "Caisse de fruits",
+          "x": 11,
+          "y": 88,
+          "w": 13,
+          "h": 15,
+          "optional": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "",
+              "text": "La caisse remue."
+            },
+            {
+              "speaker": "",
+              "text": "Krii…"
+            }
+          ]
+        },
+        {
+          "id": "navire",
+          "label": "Navire mystérieux",
+          "x": 84,
+          "y": 40,
+          "w": 14,
+          "h": 20,
+          "required": true,
+          "inDecor": true,
+          "overlay": {
+            "image": "/assets/objects/longue-vue.png",
+            "alt": "Longue-vue",
+            "text": "Vous approchez la longue-vue de votre œil…"
+          },
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Toi aussi, tu l’as remarqué ?"
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Ce navire dérive depuis l’aube. Il n’a ni pavillon ni équipage visible."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Pourtant, ses voiles sont encore levées…"
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Éloignez-vous du quai. Un navire sans équipage n’apporte jamais rien de bon."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Ou il apporte une énigme."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "C’est précisément ce qui m’inquiète.",
+              "choices": [
+                {
+                  "text": "Nous devrions aller voir.",
+                  "setFlag": "p0_choice",
+                  "flagValue": "investigate",
+                  "replies": [
+                    {
+                      "speaker": "Alizée",
+                      "text": "Je le savais. La curiosité est une excellente boussole."
+                    },
+                    {
+                      "speaker": "Nérée",
+                      "text": "Ou un excellent moyen de finir dans la cale. Mais soit : à la chaloupe."
+                    }
+                  ]
+                },
+                {
+                  "text": "Attendons qu’il s’échoue.",
+                  "setFlag": "p0_choice",
+                  "flagValue": "wait",
+                  "replies": [
+                    {
+                      "speaker": "Nérée",
+                      "text": "Prudent. J’apprécie."
+                    },
+                    {
+                      "speaker": "Alizée",
+                      "text": "Et s’il dérive trop loin ? Nous prendrons la chaloupe — par précaution."
+                    }
+                  ]
+                },
+                {
+                  "text": "Envoyons les mouettes en éclaireuses.",
+                  "setFlag": "p0_choice",
+                  "flagValue": "seagulls",
+                  "replies": [
+                    {
+                      "speaker": "Nérée",
+                      "text": "Excellente idée. Dès que tu auras appris à interroger une mouette, préviens-moi."
+                    },
+                    {
+                      "speaker": "Alizée",
+                      "text": "En attendant, nous prendrons la chaloupe."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "nextSceneId": "p1_chaloupe"
+        }
+      ]
+    },
+    {
+      "id": "p1_chaloupe",
+      "title": "La chaloupe",
+      "requireInteraction": true,
+      "prompt": "Touchez l’échelle du navire abandonné.",
+      "next": "p2_pont",
+      "decor": {
+        "background": "/assets/backgrounds/chaloupe-navire-abandonne.png"
+      },
+      "hotspots": [
+        {
+          "id": "echelle",
+          "label": "Échelle",
+          "x": 55,
+          "y": 54,
+          "w": 7,
+          "h": 28,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "",
+                  "text": "Une caisse tombe dans la chaloupe en rebondissant."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Capitaine… cette banane vient de cligner des yeux."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Les bananes ne clignent pas des yeux."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Celle-ci vient de recommencer."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Un maki ! Que fait-il dans mes provisions ?"
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Techniquement, ce sont maintenant ses provisions."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii !"
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "p1_maki_qcm",
+              "allowAny": true,
+              "narrative": true,
+              "question": "Que devons-nous faire de ce passager clandestin ?",
+              "options": [
+                {
+                  "text": "Le ramener immédiatement au port.",
+                  "replies": [
+                    {
+                      "speaker": "Alizée",
+                      "text": "Et le laisser sans aventures ? Regarde-le : il a déjà choisi son camp."
+                    },
+                    {
+                      "speaker": "Nérée",
+                      "text": "Il restera avec {{playerName}}. Au moins quelqu’un surveillera les biscuits."
+                    },
+                    {
+                      "speaker": "Maki",
+                      "text": "Krii-krii !"
+                    }
+                  ]
+                },
+                {
+                  "text": "Le laisser accompagner l’expédition.",
+                  "replies": [
+                    {
+                      "speaker": "Alizée",
+                      "text": "Parfait. {{playerName}}, tu viens de gagner un compagnon à queuee rayée."
+                    },
+                    {
+                      "speaker": "Nérée",
+                      "text": "Tant qu’il ne mange pas la carte, je tolère."
+                    },
+                    {
+                      "speaker": "Maki",
+                      "text": "Krii !"
+                    }
+                  ]
+                },
+                {
+                  "text": "Lui confier le commandement de la chaloupe.",
+                  "replies": [
+                    {
+                      "speaker": "Nérée",
+                      "text": "Certainement pas. Mais il peut rester avec notre jeune aventurier."
+                    },
+                    {
+                      "speaker": "Alizée",
+                      "text": "{{playerName}}, Maki est officiellement de ton bord."
+                    },
+                    {
+                      "speaker": "Maki",
+                      "text": "Krii-krii !"
+                    }
+                  ]
+                }
+              ],
+              "nextSceneId": "p2_pont",
+              "setFlags": {
+                "makiCompanion": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_pont",
+      "title": "Le pont abandonné",
+      "requireInteraction": true,
+      "prompt": "Examinez les indices sur le pont. La cabine s’ouvrira après au moins trois indices.",
+      "next": "p3_cabine",
+      "decor": {
+        "background": "/assets/backgrounds/pont-navire.png"
+      },
+      "hotspots": [
+        {
+          "id": "barre",
+          "label": "Barre",
+          "x": 14,
+          "y": 48,
+          "w": 15,
+          "h": 28,
+          "exam": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Elle est bloquée vers le sud-est. Le navire suivait-il volontairement cette direction ?"
+            }
+          ]
+        },
+        {
+          "id": "corde",
+          "label": "Corde coupée",
+          "x": 52,
+          "y": 48,
+          "w": 12,
+          "h": 14,
+          "exam": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Nérée",
+              "text": "Elle n’a pas été usée. Quelqu’un l’a coupée."
+            }
+          ]
+        },
+        {
+          "id": "traces",
+          "label": "Traces humides",
+          "x": 54,
+          "y": 72,
+          "w": 18,
+          "h": 12,
+          "exam": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Maki",
+              "text": "Krii… (Maki suit les empreintes du bout du museau.)"
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Elles conduisent à la cabine… mais aucune trace n’en ressort."
+            }
+          ]
+        },
+        {
+          "id": "compas",
+          "label": "Compas brisé",
+          "x": 72,
+          "y": 80,
+          "w": 14,
+          "h": 16,
+          "exam": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Ce symbole est gravé sur le manche : un triangle traversé par deux droites parallèles."
+            }
+          ]
+        },
+        {
+          "id": "porte",
+          "label": "Porte de la cabine",
+          "x": 76,
+          "y": 36,
+          "w": 9,
+          "h": 20,
+          "required": true,
+          "inDecor": true,
+          "unlockAfterExamined": 3,
+          "lockedPrompt": "Examinez encore au moins trois indices sur le pont avant d’ouvrir la cabine.",
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "La porte cède. L’air sent le papier humide et l’encre ancienne."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Entrez. Mais restez sur vos gardes."
+            }
+          ],
+          "nextSceneId": "p3_cabine"
+        }
+      ]
+    },
+    {
+      "id": "p3_cabine",
+      "title": "La cabine du cartographe",
+      "requireInteraction": true,
+      "prompt": "Explorez la cabine : portrait, cartes, livre et coffre.",
+      "next": "p4_lettre",
+      "decor": {
+        "background": "/assets/backgrounds/cabine-cartographe.png"
+      },
+      "hotspots": [
+        {
+          "id": "portrait",
+          "label": "Portrait",
+          "x": 58,
+          "y": 22,
+          "w": 9,
+          "h": 16,
+          "required": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Je reconnais cet homme… C’est Thalès, le cartographe disparu."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Disparu depuis sept ans. Son navire, lui, semble avoir attendu notre arrivée."
+            }
+          ]
+        },
+        {
+          "id": "cartes",
+          "label": "Cartes",
+          "x": 38,
+          "y": 52,
+          "w": 16,
+          "h": 12,
+          "required": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "La carte a été divisée. Il manque six fragments."
+            }
+          ]
+        },
+        {
+          "id": "livre",
+          "label": "Livre à l’envers",
+          "x": 43,
+          "y": 54,
+          "w": 7,
+          "h": 7,
+          "required": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Maki",
+              "text": "Krii ! (Maki retourne le livre… et se retrouve coincé dessous.)"
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Notre nouveau spécialiste vient de confirmer que le livre possède deux faces."
+            },
+            {
+              "speaker": "",
+              "text": "Une note apparaît : « La mesure ouvre les routes que la force ne peut franchir. »"
+            }
+          ]
+        },
+        {
+          "id": "coffre",
+          "label": "Coffre",
+          "x": 58,
+          "y": 46,
+          "w": 14,
+          "h": 14,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Le coffre est verrouillé par des symboles. Le message de Thalès devrait nous guider."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "p3_coffre_symbole",
+              "question": "Quel symbole correspond le mieux au message de Thalès ?",
+              "wrongFlavor": "Maki touche le mauvais symbole et reçoit un nuage de poussière. Atchoum !",
+              "options": [
+                {
+                  "text": "L’épée, car la force permet de franchir les obstacles.",
+                  "correct": false,
+                  "explanation": "Le message oppose justement la mesure à la force. Cherchons un symbole lié à la géométrie."
+                },
+                {
+                  "text": "La pièce, car le coffre contient certainement de l’or.",
+                  "correct": false,
+                  "explanation": "Le message oppose justement la mesure à la force. Cherchons un symbole lié à la géométrie."
+                },
+                {
+                  "text": "Le compas, car le message parle de mesure.",
+                  "correct": true
+                }
+              ],
+              "success": "Le coffre s’ouvre dans un cliquetis. À l’intérieur : une lettre scellée.",
+              "completeScene": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p4_lettre",
+      "title": "La lettre de Thalès",
+      "requireInteraction": true,
+      "prompt": "Touchez la lettre pour lire chaque partie du message.",
+      "next": "p5_serment",
+      "decor": {
+        "background": "/assets/backgrounds/cabine-cartographe.png",
+        "objects": [
+          {
+            "image": "/assets/objects/lettre-thales.png",
+            "x": 44,
+            "y": 58,
+            "w": 14,
+            "h": 16,
+            "z": 2
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "lettre",
+          "label": "Lettre de Thalès",
+          "x": 44,
+          "y": 58,
+          "w": 14,
+          "h": 16,
+          "required": true,
+          "inDecor": true,
+          "phases": [
+            {
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "À celui ou celle qui découvrira ce message, Thalès n’a pas disparu par accident. Il a trouvé une île qu’aucune carte ne peut situer."
+                }
+              ]
+            },
+            {
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Il y a caché un trésor capable de révéler les distances que nul instrument ne peut mesurer directement."
+                }
+              ]
+            },
+            {
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Six fragments conduisent au sanctuaire. Mais aucun ne peut être obtenu par la force. Chaque étape exige observation, raisonnement et précision."
+                }
+              ]
+            },
+            {
+              "lines": [
+                {
+                  "speaker": "Maki",
+                  "text": "Krii ? (Maki tente de regarder derrière la lettre.)"
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Nous avons trouvé le navire de Thalès, son journal et le début de sa route."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Nous avons également trouvé un animal qui mange mes provisions."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Personne ne revient jamais d’une expédition exactement comme il en est parti."
+                }
+              ]
+            }
+          ],
+          "nextSceneId": "p5_serment"
+        }
+      ]
+    },
+    {
+      "id": "p5_serment",
+      "title": "Le serment de l’équipage",
+      "requireInteraction": true,
+      "prompt": "Touchez la carte pour étudier la route des fragments.",
+      "next": "p6_depart",
+      "decor": {
+        "background": "/assets/backgrounds/table-carte.png"
+      },
+      "hotspots": [
+        {
+          "id": "carte",
+          "label": "Carte",
+          "x": 52,
+          "y": 50,
+          "w": 40,
+          "h": 36,
+          "required": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "Les six fragments sont dispersés sur cette route. Si nous les réunissons, nous trouverons le sanctuaire."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "À condition que Silas ne les trouve pas avant nous."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Silas ?"
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Un ancien élève de Thalès. Il recherche ce trésor depuis des années et ne recule devant aucun piège.",
+              "choices": [
+                {
+                  "text": "J’accepte de vous aider.",
+                  "setFlag": "oath",
+                  "flagValue": "accept",
+                  "replies": [
+                    {
+                      "speaker": "Alizée",
+                      "text": "Alors c’est décidé. {{playerName}}, Maki et moi retrouverons les fragments de Thalès."
+                    },
+                    {
+                      "speaker": "Nérée",
+                      "text": "La Sécante des Vents appareille dès que vous serez prêts."
+                    }
+                  ]
+                },
+                {
+                  "text": "Je veux d’abord savoir où nous allons.",
+                  "setFlag": "oath",
+                  "flagValue": "ask",
+                  "replies": [
+                    {
+                      "speaker": "Nérée",
+                      "text": "Vers un récif que les cartes marquent à peine. Ensuite… le reste de la route se mérite."
+                    },
+                    {
+                      "speaker": "Alizée",
+                      "text": "Alors c’est décidé. {{playerName}}, Maki et moi retrouverons les fragments de Thalès."
+                    }
+                  ]
+                },
+                {
+                  "text": "Est-ce que Maki vient avec nous ?",
+                  "setFlag": "oath",
+                  "flagValue": "maki",
+                  "replies": [
+                    {
+                      "speaker": "Nérée",
+                      "text": "J’ai bien peur qu’il se soit déjà nommé membre de l’équipage."
+                    },
+                    {
+                      "speaker": "Alizée",
+                      "text": "Alors c’est décidé. {{playerName}}, Maki et moi retrouverons les fragments de Thalès."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "nextSceneId": "p6_depart"
+        }
+      ]
+    },
+    {
+      "id": "p6_depart",
+      "title": "Le départ",
+      "requireInteraction": true,
+      "prompt": "Touchez le navire pour appareiller.",
+      "decor": {
+        "background": "/assets/backgrounds/depart-secante-des-vents.png"
+      },
+      "hotspots": [
+        {
+          "id": "navire_depart",
+          "label": "La Sécante des Vents",
+          "x": 34,
+          "y": 52,
+          "w": 34,
+          "h": 48,
+          "required": true,
+          "inDecor": true,
+          "sequence": [
+            {
+              "type": "transition",
+              "title": "Partie 1 — Le récif des Angles droits",
+              "subtitle": "Le théorème de Pythagore",
+              "image": "/assets/backgrounds/recif-angles-droits.png",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Le premier fragment se trouve de l’autre côté de ce récif."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Aucun navire ne peut le traverser sans connaître exactement la longueur du passage."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Alors nous la calculerons."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii ! (Maki déroule la carte trop vivement et s’enroule dedans.)"
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Notre équipage est prêt. Enfin… presque."
+                }
+              ],
+              "endPart": true,
+              "message": "Le voyage vers le récif des Angles droits commencera bientôt.",
+              "announce": "Prochaine étape : Partie 1 — Le théorème de Pythagore."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

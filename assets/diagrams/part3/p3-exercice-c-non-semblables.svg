@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <rect width="1200" height="620" fill="#f5e4c4"/>
+  <rect x="28" y="28" width="1144" height="564" rx="18" fill="#fff5d8" stroke="#6d4a24" stroke-width="5"/>
+  <text x="600" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" fill="#2f2215">Deux triangles : sont-ils semblables ?</text>
+
+  <text x="300" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#2f2215">Triangle 1</text>
+  <polygon points="160,455 470,455 160,225" fill="#ead19a" stroke="#4a3018" stroke-width="7" stroke-linejoin="round"/>
+  <text x="315" y="502" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215">3</text>
+  <text x="120" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215">4</text>
+  <text x="335" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215" transform="rotate(37 335 318)">5</text>
+
+  <text x="900" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#2f2215">Triangle 2</text>
+  <polygon points="730,455 1080,455 730,195" fill="#ead19a" stroke="#4a3018" stroke-width="7" stroke-linejoin="round"/>
+  <text x="905" y="502" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215">6</text>
+  <text x="690" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215">8</text>
+  <text x="930" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#2f2215" transform="rotate(37 930 310)">12</text>
+</svg>

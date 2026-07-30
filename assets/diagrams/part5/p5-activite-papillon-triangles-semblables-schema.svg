@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="700" viewBox="0 0 1080 700">
+<rect width="1080" height="700" fill="#fff8e5"/>
+<text x="540" y="50" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="38" font-weight="700" fill="#7a461c">Activité d'introduction</text>
+<text x="540" y="100" text-anchor="middle" font-family="DejaVu Sans, Arial" font-size="24" font-weight="700" fill="#2b261f">Triangles semblables en configuration papillon</text>
+<text x="540.0" y="143.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#2b261f">AMN ~ ABC</text>
+<polygon points="500,365 400,305 350,455" fill="#e8be76" fill-opacity=".62" stroke="#5f401e" stroke-width="7" stroke-linejoin="round"/>
+<polygon points="500,365 800,545 950,95" fill="#82b9c3" fill-opacity=".58" stroke="#5f401e" stroke-width="7" stroke-linejoin="round"/>
+<polyline points="400,305 500,365 800,545" fill="none" stroke="#5f401e" stroke-width="7" stroke-linejoin="round"/>
+<polyline points="350,455 500,365 950,95" fill="none" stroke="#5f401e" stroke-width="7" stroke-linejoin="round"/>
+<line x1="400" y1="305" x2="350" y2="455" stroke="#0f829b" stroke-width="7"/>
+<line x1="800" y1="545" x2="950" y2="95" stroke="#0f829b" stroke-width="7"/>
+<text x="396.0" y="256.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">AM = 2 m</text>
+<text x="674.0" y="494.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">AB = 6 m</text>
+<text x="314.0" y="406.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">AN = 3 m</text>
+<text x="770.0" y="205.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">AC = ?</text>
+<text x="642.0" y="306.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="400" fill="#2b261f">MN ∥ BC</text>
+<text x="264.0" y="545.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#2b261f">Triangle AMN</text>
+<text x="850.0" y="620.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#2b261f">Triangle ABC</text>
+<text x="510.0" y="610.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#2b261f">AM ↔ AB : ×3</text>
+<text x="510.0" y="656.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" font-weight="700" fill="#2b261f">AN ↔ AC : ×3</text>
+<text x="372.0" y="287.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">M</text>
+<text x="318.0" y="488.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">N</text>
+<text x="500.0" y="407.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">A</text>
+<text x="834.0" y="569.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">B</text>
+<text x="978.0" y="79.0" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="700" fill="#2b261f">C</text>
+</svg>
