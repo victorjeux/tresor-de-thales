@@ -1,0 +1,1966 @@
+{
+  "meta": {
+    "partId": "part2",
+    "title": "Partie 2 — Le chantier du quai",
+    "startSceneId": "p2_0_arrivee_chantier",
+    "sceneOrder": [
+      "p2_0_arrivee_chantier",
+      "p2_1_decouverte_corde",
+      "p2_2_cours",
+      "p2_3_verification",
+      "p2_4_exercices_application",
+      "p2_6_finale_mur",
+      "p2_7_fragment_mur",
+      "p2_8_conclusion"
+    ],
+    "endMessage": "Partie 2 terminée. Deuxième fragment récupéré.",
+    "announceNext": "Partie 3 — Triangles semblables.",
+    "nextPartId": "part3"
+  },
+  "scenes": [
+    {
+      "id": "p2_0_arrivee_chantier",
+      "title": "L'atelier des cordes",
+      "requireInteraction": true,
+      "prompt": "Explore l'atelier du quai. Les charpentiers ont laissé une corde à nœuds qui semble servir d'équerre.",
+      "next": "p2_1_decouverte_corde",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-atelier-exercices-cordes.png",
+        "objects": [
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/fil-a-plomb.png",
+            "alt": "Fil à plomb",
+            "x": 18,
+            "y": 48,
+            "w": 10,
+            "h": 28,
+            "z": 2
+          },
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/equerre-ancienne.png",
+            "alt": "Équerre ancienne fendue",
+            "x": 78,
+            "y": 62,
+            "w": 14,
+            "h": 16,
+            "z": 2
+          },
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/corde-noeuds-triangle.png",
+            "alt": "Corde à nœuds formant un triangle",
+            "x": 50,
+            "y": 58,
+            "w": 22,
+            "h": 22,
+            "z": 3
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "fil_a_plomb",
+          "label": "Fil à plomb",
+          "x": 18,
+          "y": 48,
+          "w": 10,
+          "h": 28,
+          "optional": true,
+          "advancesStory": false,
+          "repeatable": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Nérée",
+              "text": "Un fil à plomb indique la verticale, mais il ne suffit pas toujours à contrôler un angle au sol."
+            }
+          ]
+        },
+        {
+          "id": "equerre_ancienne",
+          "label": "Équerre ancienne",
+          "x": 78,
+          "y": 62,
+          "w": 14,
+          "h": 16,
+          "optional": true,
+          "advancesStory": false,
+          "repeatable": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Alizée",
+              "text": "L'équerre est fendue. Elle a dû survivre à quelques tempêtes de trop."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Alors nous vérifierons l'angle sans elle."
+            }
+          ]
+        },
+        {
+          "id": "corde_noeuds",
+          "label": "Corde à nœuds",
+          "x": 50,
+          "y": 58,
+          "w": 22,
+          "h": 22,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "lines": [
+            {
+              "speaker": "Nérée",
+              "text": "Voilà l'atelier du quai d'Halcyon. Les charpentiers d'ici travaillent vite, mais ils ne laissent rien au hasard."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "Cette corde à nœuds forme un triangle. On dirait qu'ils l'utilisent pour vérifier les angles droits."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Un œil humain peut se tromper. Une égalité bien vérifiée, beaucoup moins."
+            },
+            {
+              "speaker": "Maki",
+              "text": "Krii ?"
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Aujourd'hui, nous allons utiliser les longueurs pour décider si un angle est droit."
+            },
+            {
+              "speaker": "Alizée",
+              "text": "La corde forme un triangle avec trois longueurs marquées."
+            },
+            {
+              "speaker": "Nérée",
+              "text": "Si ce triangle est rectangle, les charpentiers peuvent s'en servir comme équerre."
+            },
+            {
+              "speaker": "Euclide",
+              "text": "Voilà une excellente entrée dans la réciproque du théorème de Pythagore."
+            }
+          ],
+          "nextSceneId": "p2_1_decouverte_corde"
+        }
+      ]
+    },
+    {
+      "id": "p2_1_decouverte_corde",
+      "title": "La corde à nœuds des charpentiers",
+      "requireInteraction": true,
+      "prompt": "Examine la corde à nœuds et complète la rédaction.",
+      "next": "p2_2_cours",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-atelier-exercices-cordes.png",
+        "objects": [
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/corde-noeuds-triangle.png",
+            "alt": "Corde à nœuds",
+            "x": 72,
+            "y": 55,
+            "w": 16,
+            "h": 16,
+            "z": 2
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "start_corde",
+          "label": "Triangle de la corde",
+          "x": 50,
+          "y": 50,
+          "w": 28,
+          "h": 28,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p2_1_corde",
+              "title": "Corde à nœuds — triangle DEF",
+              "progressiveHelp": true,
+              "prompt": "Les charpentiers ont laissé une corde à nœuds formant le triangle DEF.\nOn sait que DE = 3 m, EF = 4 m et DF = 5 m.\nCette corde peut-elle servir à former un angle droit en E ?",
+              "figure": "triangleNamed",
+              "figureLabels": {
+                "A": "D",
+                "B": "E",
+                "C": "F",
+                "sideAB": "3 m",
+                "sideBC": "4 m",
+                "sideAC": "5 m"
+              },
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle DEF, le plus grand côté est "
+                    },
+                    {
+                      "type": "field",
+                      "id": "plusGrandCote"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'une part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "DF² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "dfLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "dfCarre"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'autre part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "DE² + EF² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "deLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "efLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "deCarre"
+                    },
+                    {
+                      "type": "text",
+                      "text": " + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "efCarre"
+                    },
+                    {
+                      "type": "text",
+                      "text": " = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "somme"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "On compare :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "DF² "
+                    },
+                    {
+                      "type": "field",
+                      "id": "comparaison"
+                    },
+                    {
+                      "type": "text",
+                      "text": " DE² + EF²"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "D'après la réciproque du théorème de Pythagore,"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Donc le triangle DEF "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusionTriangle"
+                    },
+                    {
+                      "type": "text",
+                      "text": " rectangle en "
+                    },
+                    {
+                      "type": "field",
+                      "id": "sommetAngleDroit"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "La corde "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusionCorde"
+                    },
+                    {
+                      "type": "text",
+                      "text": " servir d'équerre."
+                    }
+                  ]
+                }
+              ],
+              "fields": {
+                "plusGrandCote": {
+                  "kind": "select",
+                  "options": [
+                    "[DE]",
+                    "[EF]",
+                    "[DF]"
+                  ],
+                  "expected": "[DF]"
+                },
+                "dfLongueur": {
+                  "kind": "number",
+                  "expected": 5
+                },
+                "dfCarre": {
+                  "kind": "number",
+                  "expected": 25
+                },
+                "deLongueur": {
+                  "kind": "number",
+                  "expected": 3
+                },
+                "efLongueur": {
+                  "kind": "number",
+                  "expected": 4
+                },
+                "deCarre": {
+                  "kind": "number",
+                  "expected": 9
+                },
+                "efCarre": {
+                  "kind": "number",
+                  "expected": 16
+                },
+                "somme": {
+                  "kind": "number",
+                  "expected": 25
+                },
+                "comparaison": {
+                  "kind": "select",
+                  "options": [
+                    "=",
+                    "≠"
+                  ],
+                  "expected": "="
+                },
+                "conclusionTriangle": {
+                  "kind": "select",
+                  "options": [
+                    "est",
+                    "n'est pas"
+                  ],
+                  "expected": "est"
+                },
+                "sommetAngleDroit": {
+                  "kind": "select",
+                  "options": [
+                    "D",
+                    "E",
+                    "F"
+                  ],
+                  "expected": "E"
+                },
+                "conclusionCorde": {
+                  "kind": "select",
+                  "options": [
+                    "peut",
+                    "ne peut pas"
+                  ],
+                  "expected": "peut"
+                }
+              },
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Cherche d'abord le plus grand côté. C'est lui qu'on va comparer à la somme des carrés des deux autres."
+                },
+                {
+                  "reaction": "Krii-krii !",
+                  "text": "Calcule séparément : d'une part le carré du plus grand côté, d'autre part la somme des deux autres carrés."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Si les deux résultats sont égaux, tu peux conclure avec la réciproque. L'angle droit sera au sommet opposé au plus grand côté."
+                }
+              ],
+              "success": "Oui : la corde forme un triangle rectangle en E.",
+              "correction": "Dans le triangle DEF, le plus grand côté est [DF].\nD'une part :\nDF² = 5² = 25\nD'autre part :\nDE² + EF² = 3² + 4²\nDE² + EF² = 9 + 16\nDE² + EF² = 25\nOn compare :\nDF² = DE² + EF²\nD'après la réciproque du théorème de Pythagore,\nle triangle DEF est rectangle en E.\nLa corde peut donc servir d'équerre.",
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Bien. Une corde, trois mesures, et voilà une équerre improvisée."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Et on vient de découvrir une méthode : vérifier d'abord, conclure ensuite."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Exactement. Nous pouvons maintenant l'écrire proprement dans le carnet."
+                }
+              ],
+              "nextSceneId": "p2_2_cours"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_2_cours",
+      "title": "Le carnet d'Euclide",
+      "requireInteraction": true,
+      "prompt": "Touche le carnet d'Euclide pour la pause cahier.",
+      "next": "p2_3_verification",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-table-cours-reciproque.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "carnet_p2",
+          "label": "Carnet d'Euclide",
+          "x": 50,
+          "y": 55,
+          "w": 30,
+          "h": 28,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Pause cahier. Recopie chaque page. L'ordre de la rédaction compte autant que le résultat."
+                }
+              ]
+            },
+            {
+              "type": "notebook",
+              "id": "p2_notebook_reciproque",
+              "title": "Réciproque du théorème de Pythagore",
+              "pages": [
+                {
+                  "title": "II. Réciproque du théorème de Pythagore",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "II. Réciproque du théorème de Pythagore"
+                    }
+                  ]
+                },
+                {
+                  "title": "Formulation",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Dans un triangle, si le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle."
+                    },
+                    {
+                      "type": "text",
+                      "text": "L'angle droit est au sommet opposé au plus grand côté."
+                    }
+                  ]
+                },
+                {
+                  "title": "Méthode",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Pour utiliser la réciproque :"
+                    },
+                    {
+                      "type": "text",
+                      "text": "1. Je repère le plus grand côté du triangle."
+                    },
+                    {
+                      "type": "text",
+                      "text": "2. Je calcule d'une part le carré de la longueur du plus grand côté."
+                    },
+                    {
+                      "type": "text",
+                      "text": "3. Je calcule d'autre part la somme des carrés des longueurs des deux autres côtés."
+                    },
+                    {
+                      "type": "text",
+                      "text": "4. Je compare les deux résultats."
+                    },
+                    {
+                      "type": "text",
+                      "text": "5. S'ils sont égaux, le triangle est rectangle."
+                    }
+                  ]
+                },
+                {
+                  "title": "Attention rédaction",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Attention :"
+                    },
+                    {
+                      "type": "text",
+                      "text": "On n'écrit pas une égalité avant de l'avoir vérifiée."
+                    },
+                    {
+                      "type": "text",
+                      "text": "On écrit :"
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'une part : ..."
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'autre part : ..."
+                    },
+                    {
+                      "type": "text",
+                      "text": "On compare : ..."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Donc ..."
+                    }
+                  ]
+                },
+                {
+                  "title": "Exemple rectangle",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Exemple :"
+                    },
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle HFG : HF = 20 cm, FG = 21 cm et HG = 29 cm."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Le plus grand côté est [HG]."
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'une part : HG² = 29² = 841"
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'autre part : HF² + FG² = 20² + 21²"
+                    },
+                    {
+                      "type": "text",
+                      "text": "HF² + FG² = 400 + 441"
+                    },
+                    {
+                      "type": "text",
+                      "text": "HF² + FG² = 841"
+                    },
+                    {
+                      "type": "text",
+                      "text": "On compare : HG² = HF² + FG²"
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'après la réciproque du théorème de Pythagore,"
+                    },
+                    {
+                      "type": "text",
+                      "text": "Donc le triangle HFG est rectangle en F."
+                    }
+                  ]
+                },
+                {
+                  "title": "Cas non rectangle",
+                  "blocks": [
+                    {
+                      "type": "text",
+                      "text": "Si les deux résultats ne sont pas égaux, alors le triangle n'est pas rectangle."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Exemple :"
+                    },
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle DFE : DF = 5 cm, DE = 10 cm et FE = 12 cm."
+                    },
+                    {
+                      "type": "text",
+                      "text": "Le plus grand côté est [FE]."
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'une part : FE² = 12² = 144"
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'autre part : DF² + DE² = 5² + 10²"
+                    },
+                    {
+                      "type": "text",
+                      "text": "DF² + DE² = 25 + 100"
+                    },
+                    {
+                      "type": "text",
+                      "text": "DF² + DE² = 125"
+                    },
+                    {
+                      "type": "text",
+                      "text": "On compare : FE² ≠ DF² + DE²"
+                    },
+                    {
+                      "type": "text",
+                      "text": "D'après la réciproque du théorème de Pythagore,"
+                    },
+                    {
+                      "type": "text",
+                      "text": "Donc le triangle DFE n'est pas rectangle."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Ce n'est pas seulement le résultat qui compte. C'est l'ordre de la rédaction."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "D'abord on calcule, ensuite on compare, et seulement après on conclut."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii !"
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Voilà une règle qui devrait être gravée sur tous les quais."
+                }
+              ],
+              "nextSceneId": "p2_3_verification"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_3_verification",
+      "title": "Vérification du cours",
+      "requireInteraction": true,
+      "prompt": "Touche le carnet pour les questions de vérification.",
+      "next": "p2_4_exercices_application",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-table-cours-reciproque.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "verif_p2",
+          "label": "Questions de vérification",
+          "x": 50,
+          "y": 52,
+          "w": 28,
+          "h": 24,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Trois questions courtes. En cas d'erreur, relis ton cahier — je ne te donnerai pas la solution tout de suite."
+                }
+              ]
+            },
+            {
+              "type": "quiz",
+              "id": "p2_verif_plus_grand",
+              "question": "Dans le triangle ABC, on sait que AB = 9 cm, AC = 12 cm et BC = 15 cm. Quel est le plus grand côté ?",
+              "options": [
+                {
+                  "text": "[AB]",
+                  "correct": false,
+                  "explanation": "Relis les trois longueurs. Le plus grand côté est celui dont la longueur est la plus grande."
+                },
+                {
+                  "text": "[AC]",
+                  "correct": false,
+                  "explanation": "Relis les trois longueurs. Le plus grand côté est celui dont la longueur est la plus grande."
+                },
+                {
+                  "text": "[BC]",
+                  "correct": true
+                }
+              ],
+              "success": "Oui. On commence toujours par repérer le plus grand côté, ici [BC].",
+              "completeScene": false,
+              "progressiveHelp": true,
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Compare 9, 12 et 15. Lequel est le plus grand ?"
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Le plus grand côté porte la plus grande longueur."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Parmi [AB], [AC] et [BC], un seul mesure 15 cm…"
+                }
+              ],
+              "correction": "AB = 9 cm, AC = 12 cm, BC = 15 cm.\nLe plus grand côté est [BC]."
+            },
+            {
+              "type": "quiz",
+              "id": "p2_verif_redaction",
+              "question": "Quelle rédaction respecte le mieux la méthode ?",
+              "options": [
+                {
+                  "text": "A. BC² = AB² + AC² = 15² = 9² + 12²",
+                  "correct": false,
+                  "explanation": "Attention à ne pas écrire l'égalité avant de l'avoir vérifiée. Cherche la rédaction qui calcule séparément."
+                },
+                {
+                  "text": "B. D'une part : BC² = 15². D'autre part : AB² + AC² = 9² + 12². Ensuite, je compare.",
+                  "correct": true
+                },
+                {
+                  "text": "C. Le triangle a l'air rectangle, donc BC² = AB² + AC².",
+                  "correct": false,
+                  "explanation": "Attention à ne pas écrire l'égalité avant de l'avoir vérifiée. Cherche la rédaction qui calcule séparément."
+                }
+              ],
+              "success": "Parfait. La rédaction sépare les deux calculs avant de comparer.",
+              "completeScene": false,
+              "progressiveHelp": true,
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "On ne doit pas écrire l'égalité avant de l'avoir vérifiée."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Cherche « D'une part » et « D'autre part »."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "La bonne rédaction calcule séparément, puis compare."
+                }
+              ],
+              "correction": "La bonne rédaction est :\nD'une part : BC² = 15².\nD'autre part : AB² + AC² = 9² + 12².\nEnsuite, on compare."
+            },
+            {
+              "type": "quiz",
+              "id": "p2_verif_sommet",
+              "question": "Dans le triangle MNO, le plus grand côté est [NO]. Si NO² = MN² + MO², à quel sommet le triangle est-il rectangle ?",
+              "options": [
+                {
+                  "text": "M",
+                  "correct": true
+                },
+                {
+                  "text": "N",
+                  "correct": false,
+                  "explanation": "Le sommet de l'angle droit est opposé au plus grand côté. Regarde quel sommet n'appartient pas au côté [NO]."
+                },
+                {
+                  "text": "O",
+                  "correct": false,
+                  "explanation": "Le sommet de l'angle droit est opposé au plus grand côté. Regarde quel sommet n'appartient pas au côté [NO]."
+                }
+              ],
+              "success": "Oui. L'angle droit est au sommet opposé au plus grand côté [NO], donc en M.",
+              "completeScene": false,
+              "progressiveHelp": true,
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "L'angle droit est au sommet opposé au plus grand côté."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Le plus grand côté est [NO] : quels sommets appartiennent à [NO] ?"
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Le sommet qui n'est pas sur [NO] est M."
+                }
+              ],
+              "correction": "Le plus grand côté est [NO].\nL'angle droit est au sommet opposé à [NO], donc en M."
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "On a la méthode. Il reste à la rendre automatique."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Alors entraînement. Je préfère que le quai tremble moins que mes élèves."
+                }
+              ],
+              "nextSceneId": "p2_4_exercices_application"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_4_exercices_application",
+      "title": "Exercices d'application",
+      "requireInteraction": true,
+      "prompt": "Touche les drapeaux sur la table pour les exercices RST et KLM (dans n'importe quel ordre).",
+      "next": "p2_6_finale_mur",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-atelier-exercices-cordes.png",
+        "objects": [
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/petit-drapeau-sur-pied.png",
+            "alt": "Drapeau exercice RST",
+            "x": 36,
+            "y": 70,
+            "w": 8,
+            "h": 18,
+            "z": 3,
+            "grounded": true,
+            "anchor": "bottom"
+          },
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/petit-drapeau-sur-pied.png",
+            "alt": "Drapeau exercice KLM",
+            "x": 58,
+            "y": 70,
+            "w": 8,
+            "h": 18,
+            "z": 3,
+            "grounded": true,
+            "anchor": "bottom"
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "drapeau_rst",
+          "label": "Drapeau RST",
+          "x": 36,
+          "y": 60,
+          "w": 10,
+          "h": 22,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p2_4_rst",
+              "title": "Triangle RST",
+              "progressiveHelp": true,
+              "prompt": "Une corde forme le triangle RST.\nOn sait que RS = 9 cm, ST = 12 cm et RT = 15 cm.\nComplète la rédaction pour déterminer si le triangle RST est rectangle.",
+              "figure": "triangleNamed",
+              "figureLabels": {
+                "A": "R",
+                "B": "S",
+                "C": "T",
+                "sideAB": "9 cm",
+                "sideBC": "12 cm",
+                "sideAC": "15 cm"
+              },
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle RST, le plus grand côté est "
+                    },
+                    {
+                      "type": "field",
+                      "id": "plusGrandCote"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'une part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "RT² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "rtLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "rtCarre"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'autre part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "RS² + ST² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "rsLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "stLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "²"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "RS² + ST² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "rsCarre"
+                    },
+                    {
+                      "type": "text",
+                      "text": " + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "stCarre"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "RS² + ST² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "somme"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "On compare :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "RT² "
+                    },
+                    {
+                      "type": "field",
+                      "id": "comparaison"
+                    },
+                    {
+                      "type": "text",
+                      "text": " RS² + ST²"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "D'après la réciproque du théorème de Pythagore,"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Donc, d'après la réciproque du théorème de Pythagore, le triangle RST "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusion"
+                    },
+                    {
+                      "type": "text",
+                      "text": " rectangle en "
+                    },
+                    {
+                      "type": "field",
+                      "id": "sommet"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                }
+              ],
+              "fields": {
+                "plusGrandCote": {
+                  "kind": "select",
+                  "options": [
+                    "[RS]",
+                    "[ST]",
+                    "[RT]"
+                  ],
+                  "expected": "[RT]"
+                },
+                "rtLongueur": {
+                  "kind": "number",
+                  "expected": 15
+                },
+                "rtCarre": {
+                  "kind": "number",
+                  "expected": 225
+                },
+                "rsLongueur": {
+                  "kind": "number",
+                  "expected": 9
+                },
+                "stLongueur": {
+                  "kind": "number",
+                  "expected": 12
+                },
+                "rsCarre": {
+                  "kind": "number",
+                  "expected": 81
+                },
+                "stCarre": {
+                  "kind": "number",
+                  "expected": 144
+                },
+                "somme": {
+                  "kind": "number",
+                  "expected": 225
+                },
+                "comparaison": {
+                  "kind": "select",
+                  "options": [
+                    "=",
+                    "≠"
+                  ],
+                  "expected": "="
+                },
+                "conclusion": {
+                  "kind": "select",
+                  "options": [
+                    "est",
+                    "n'est pas"
+                  ],
+                  "expected": "est"
+                },
+                "sommet": {
+                  "kind": "select",
+                  "options": [
+                    "R",
+                    "S",
+                    "T"
+                  ],
+                  "expected": "S"
+                }
+              },
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Cherche d'abord le plus grand côté. C'est lui qu'on va comparer à la somme des carrés des deux autres."
+                },
+                {
+                  "reaction": "Krii-krii !",
+                  "text": "Calcule séparément : d'une part le carré du plus grand côté, d'autre part la somme des deux autres carrés."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Si les deux résultats sont égaux, tu peux conclure avec la réciproque. L'angle droit sera au sommet opposé au plus grand côté."
+                }
+              ],
+              "success": "Exact. Le triangle RST est rectangle en S.",
+              "correction": "Dans le triangle RST, le plus grand côté est [RT].\nD'une part :\nRT² = 15² = 225\nD'autre part :\nRS² + ST² = 9² + 12²\nRS² + ST² = 81 + 144\nRS² + ST² = 225\nOn compare :\nRT² = RS² + ST²\nD'après la réciproque du théorème de Pythagore,\nle triangle RST est rectangle en S.",
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Euclide",
+                  "text": "Bien. Le drapeau RST est validé."
+                }
+              ],
+              "completeScene": false
+            }
+          ]
+        },
+        {
+          "id": "drapeau_klm",
+          "label": "Drapeau KLM",
+          "x": 58,
+          "y": 60,
+          "w": 10,
+          "h": 22,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "cloze",
+              "id": "p2_5_klm",
+              "title": "Triangle KLM",
+              "progressiveHelp": true,
+              "prompt": "Un second cadre de bois forme le triangle KLM.\nOn sait que KL = 8 cm, KM = 10 cm et LM = 13 cm.\nComplète la rédaction pour déterminer si le triangle KLM est rectangle.",
+              "figure": "triangleNamed",
+              "figureLabels": {
+                "A": "K",
+                "B": "L",
+                "C": "M",
+                "sideAB": "8 cm",
+                "sideBC": "13 cm",
+                "sideAC": "10 cm"
+              },
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle KLM, le plus grand côté est "
+                    },
+                    {
+                      "type": "field",
+                      "id": "plusGrandCote"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'une part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "LM² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "lmLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "lmCarre"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'autre part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "KL² + KM² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "klLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "kmLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "²"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "KL² + KM² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "klCarre"
+                    },
+                    {
+                      "type": "text",
+                      "text": " + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "kmCarre"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "KL² + KM² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "somme"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "On compare :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "LM² "
+                    },
+                    {
+                      "type": "field",
+                      "id": "comparaison"
+                    },
+                    {
+                      "type": "text",
+                      "text": " KL² + KM²"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "D'après la réciproque du théorème de Pythagore,"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Donc le triangle KLM "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusion"
+                    },
+                    {
+                      "type": "text",
+                      "text": " rectangle."
+                    }
+                  ]
+                }
+              ],
+              "fields": {
+                "plusGrandCote": {
+                  "kind": "select",
+                  "options": [
+                    "[KL]",
+                    "[KM]",
+                    "[LM]"
+                  ],
+                  "expected": "[LM]"
+                },
+                "lmLongueur": {
+                  "kind": "number",
+                  "expected": 13
+                },
+                "lmCarre": {
+                  "kind": "number",
+                  "expected": 169
+                },
+                "klLongueur": {
+                  "kind": "number",
+                  "expected": 8
+                },
+                "kmLongueur": {
+                  "kind": "number",
+                  "expected": 10
+                },
+                "klCarre": {
+                  "kind": "number",
+                  "expected": 64
+                },
+                "kmCarre": {
+                  "kind": "number",
+                  "expected": 100
+                },
+                "somme": {
+                  "kind": "number",
+                  "expected": 164
+                },
+                "comparaison": {
+                  "kind": "select",
+                  "options": [
+                    "=",
+                    "≠"
+                  ],
+                  "expected": "≠"
+                },
+                "conclusion": {
+                  "kind": "select",
+                  "options": [
+                    "est",
+                    "n'est pas"
+                  ],
+                  "expected": "n'est pas"
+                }
+              },
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Même quand le triangle n'est pas rectangle, on commence pareil : repérer le plus grand côté."
+                },
+                {
+                  "reaction": "Krii-krii !",
+                  "text": "Ne mélange pas les lignes. Calcule LM² d'un côté, puis KL² + KM² de l'autre."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Si les deux résultats sont différents, tu ne peux pas conclure que le triangle est rectangle."
+                }
+              ],
+              "success": "Oui. Le triangle KLM n'est pas rectangle.",
+              "correction": "Dans le triangle KLM, le plus grand côté est [LM].\nD'une part :\nLM² = 13² = 169\nD'autre part :\nKL² + KM² = 8² + 10²\nKL² + KM² = 64 + 100\nKL² + KM² = 164\nOn compare :\nLM² ≠ KL² + KM²\nD'après la réciproque du théorème de Pythagore,\nDonc le triangle KLM n'est pas rectangle.",
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Donc la méthode sert aussi à repérer un angle qui ne mesure pas 90°."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Oui. La réciproque permet de prouver qu'un triangle est rectangle quand l'égalité est vraie. Si l'égalité est fausse, le triangle n'est pas rectangle."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Voilà qui évitera de construire une pièce bancale."
+                }
+              ],
+              "completeScene": false
+            }
+          ]
+        },
+        {
+          "id": "opt_table_p24",
+          "label": "Outils sur la table",
+          "x": 18,
+          "y": 72,
+          "w": 10,
+          "h": 12,
+          "optional": true,
+          "advancesStory": false,
+          "repeatable": true,
+          "inDecor": true,
+          "lines": [
+            {
+              "speaker": "Maki",
+              "text": "Krii ! Deux drapeaux, deux triangles… dans n'importe quel ordre !"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_6_finale_mur",
+      "title": "Le muret de la jetée",
+      "requireInteraction": true,
+      "prompt": "Vérifie le muret réparé pendant la nuit.",
+      "next": "p2_7_fragment_mur",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-chantier-quai-mur.png",
+        "objects": []
+      },
+      "hotspots": [
+        {
+          "id": "mur_final",
+          "label": "Muret à vérifier",
+          "x": 48,
+          "y": 55,
+          "w": 28,
+          "h": 30,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Avant de quitter le quai, il faut vérifier ce muret réparé pendant la nuit."
+                }
+              ]
+            },
+            {
+              "type": "cloze",
+              "id": "p2_6_mur",
+              "title": "Le muret de la jetée",
+              "progressiveHelp": true,
+              "prompt": "Avant de quitter le quai, Nérée doit vérifier le muret réparé pendant la nuit.\n\nIl marque un point B sur le mur à 0,80 m du sol, puis un point A sur le sol à 0,60 m du pied du mur C.\nIl mesure ensuite AB et obtient 1 m.\n\nLe mur est-il bien perpendiculaire au sol ?\nComplète la rédaction finale. N'écris pas d'unité dans les champs numériques.",
+              "figure": "wallTriangle",
+              "figureLabels": {
+                "A": "A",
+                "B": "B",
+                "C": "C",
+                "sideAC": "0,60 m",
+                "sideBC": "0,80 m",
+                "sideAB": "1 m"
+              },
+              "lines": [
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Dans le triangle ABC, le plus grand côté est "
+                    },
+                    {
+                      "type": "field",
+                      "id": "plusGrandCote"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'une part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "AB² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "abLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "abCarre"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "D'autre part :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "AC² + BC² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "acLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "² + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "bcLongueur"
+                    },
+                    {
+                      "type": "text",
+                      "text": "²"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "AC² + BC² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "acCarre"
+                    },
+                    {
+                      "type": "text",
+                      "text": " + "
+                    },
+                    {
+                      "type": "field",
+                      "id": "bcCarre"
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "AC² + BC² = "
+                    },
+                    {
+                      "type": "field",
+                      "id": "somme"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading",
+                  "text": "On compare :"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "AB² "
+                    },
+                    {
+                      "type": "field",
+                      "id": "comparaison"
+                    },
+                    {
+                      "type": "text",
+                      "text": " AC² + BC²"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "text": "D'après la réciproque du théorème de Pythagore,"
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Donc, d'après la réciproque du théorème de Pythagore, le triangle ABC "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusion"
+                    },
+                    {
+                      "type": "text",
+                      "text": " rectangle en "
+                    },
+                    {
+                      "type": "field",
+                      "id": "sommet"
+                    },
+                    {
+                      "type": "text",
+                      "text": "."
+                    }
+                  ]
+                },
+                {
+                  "parts": [
+                    {
+                      "type": "text",
+                      "text": "Le mur "
+                    },
+                    {
+                      "type": "field",
+                      "id": "conclusionMur"
+                    },
+                    {
+                      "type": "text",
+                      "text": " perpendiculaire au sol."
+                    }
+                  ]
+                }
+              ],
+              "fields": {
+                "plusGrandCote": {
+                  "kind": "select",
+                  "options": [
+                    "[AB]",
+                    "[AC]",
+                    "[BC]"
+                  ],
+                  "expected": "[AB]"
+                },
+                "abLongueur": {
+                  "kind": "number",
+                  "expected": 1
+                },
+                "abCarre": {
+                  "kind": "number",
+                  "expected": 1
+                },
+                "acLongueur": {
+                  "kind": "number",
+                  "expected": 0.6,
+                  "accept": [
+                    "0,60",
+                    "0.60",
+                    "0,6",
+                    "0.6"
+                  ],
+                  "tolerance": 0.001
+                },
+                "bcLongueur": {
+                  "kind": "number",
+                  "expected": 0.8,
+                  "accept": [
+                    "0,80",
+                    "0.80",
+                    "0,8",
+                    "0.8"
+                  ],
+                  "tolerance": 0.001
+                },
+                "acCarre": {
+                  "kind": "number",
+                  "expected": 0.36,
+                  "accept": [
+                    "0,36",
+                    "0.36"
+                  ],
+                  "tolerance": 0.001
+                },
+                "bcCarre": {
+                  "kind": "number",
+                  "expected": 0.64,
+                  "accept": [
+                    "0,64",
+                    "0.64"
+                  ],
+                  "tolerance": 0.001
+                },
+                "somme": {
+                  "kind": "number",
+                  "expected": 1,
+                  "tolerance": 0.001
+                },
+                "comparaison": {
+                  "kind": "select",
+                  "options": [
+                    "=",
+                    "≠"
+                  ],
+                  "expected": "="
+                },
+                "conclusion": {
+                  "kind": "select",
+                  "options": [
+                    "est",
+                    "n'est pas"
+                  ],
+                  "expected": "est"
+                },
+                "sommet": {
+                  "kind": "select",
+                  "options": [
+                    "A",
+                    "B",
+                    "C"
+                  ],
+                  "expected": "C"
+                },
+                "conclusionMur": {
+                  "kind": "select",
+                  "options": [
+                    "est",
+                    "n'est pas"
+                  ],
+                  "expected": "est"
+                }
+              },
+              "hints": [
+                {
+                  "reaction": "Krii !",
+                  "text": "Le plus grand côté est celui qui mesure 1 m. L'angle droit, s'il existe, sera au sommet opposé à ce côté."
+                },
+                {
+                  "reaction": "Krii-krii !",
+                  "text": "Calcule 1² d'un côté, puis 0,60² + 0,80² de l'autre. Ne les relie pas par un égal avant d'avoir comparé."
+                },
+                {
+                  "reaction": "Krii !",
+                  "text": "Si les deux résultats sont égaux, utilise la réciproque et cherche le sommet qui n'appartient pas au plus grand côté."
+                }
+              ],
+              "success": "Mur vérifié : angle droit confirmé.",
+              "correction": "Dans le triangle ABC, le plus grand côté est [AB].\nD'une part :\nAB² = 1² = 1\nD'autre part :\nAC² + BC² = 0,60² + 0,80²\nAC² + BC² = 0,36 + 0,64\nAC² + BC² = 1\nOn compare :\nAB² = AC² + BC²\nD'après la réciproque du théorème de Pythagore,\nle triangle ABC est rectangle en C.\nLe mur est donc perpendiculaire au sol.",
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Mur vérifié. Angle droit confirmé. On peut quitter le quai sans finir dans l'eau."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Comme quoi, une mesure bien rédigée vaut mieux qu'un mur qui a simplement l'air droit."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii !"
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "La réciproque vient de nous donner une certitude, pas une impression."
+                }
+              ],
+              "nextSceneId": "p2_7_fragment_mur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_7_fragment_mur",
+      "title": "Le deuxième fragment",
+      "requireInteraction": true,
+      "prompt": "Un fragment de carte est apparu. Touche-le pour le récupérer.",
+      "next": "p2_8_conclusion",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-chantier-quai-mur.png",
+        "objects": [
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/fragment-carte-2.png",
+            "alt": "Deuxième fragment de la carte de Thalès",
+            "x": 68,
+            "y": 42,
+            "w": 14,
+            "h": 16,
+            "z": 4
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "fragment_carte_2",
+          "label": "Deuxième fragment de carte",
+          "x": 68,
+          "y": 42,
+          "w": 14,
+          "h": 16,
+          "required": true,
+          "image": "/tresor-de-thales/assets/objects/part2/fragment-carte-2.png",
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "fragmentZoom",
+              "image": "/tresor-de-thales/assets/objects/part2/fragment-carte-2.png",
+              "alt": "Zoom du deuxième fragment de la carte de Thalès",
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Le fragment s’assemble avec le premier… Regarde, la carte commence à révéler son chemin."
+                }
+              ],
+              "completeScene": false
+            },
+            {
+              "type": "fragmentBoard",
+              "placeFragment": 2,
+              "total": 6,
+              "completeScene": false
+            },
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Nérée",
+                  "text": "Deux fragments sur six. Le trésor de Thalès se rapproche, mais la route est encore longue."
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Chaque théorème nous donne une clé. Celui-ci a confirmé l’angle droit du muret."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Fragments récupérés : 2 / 6."
+                }
+              ],
+              "setFlags": {
+                "fragment2Collected": true
+              },
+              "nextSceneId": "p2_8_conclusion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2_8_conclusion",
+      "title": "Le deuxième fragment",
+      "requireInteraction": true,
+      "prompt": "Écoute la conclusion avant de poursuivre la route.",
+      "decor": {
+        "background": "/tresor-de-thales/assets/backgrounds/part2/p2-chantier-quai-mur.png",
+        "objects": [
+          {
+            "image": "/tresor-de-thales/assets/objects/part2/fragment-carte-2.png",
+            "alt": "Deuxième fragment de carte",
+            "x": 70,
+            "y": 40,
+            "w": 12,
+            "h": 14,
+            "z": 3
+          }
+        ]
+      },
+      "hotspots": [
+        {
+          "id": "conclusion_p2",
+          "label": "Conclusion",
+          "x": 50,
+          "y": 48,
+          "w": 32,
+          "h": 28,
+          "required": true,
+          "inDecor": true,
+          "repeatable": true,
+          "advancesStory": true,
+          "sequence": [
+            {
+              "type": "dialogue",
+              "lines": [
+                {
+                  "speaker": "Alizée",
+                  "text": "Deux fragments réunis. La carte commence à parler."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Elle parle surtout par énigmes. Je déteste les cartes qui ont plus de caractère que leur capitaine."
+                },
+                {
+                  "speaker": "Maki",
+                  "text": "Krii-krii !"
+                },
+                {
+                  "speaker": "Euclide",
+                  "text": "Le prochain fragment semble lié à des triangles semblables. Même forme, tailles différentes."
+                },
+                {
+                  "speaker": "Alizée",
+                  "text": "Alors la suite de notre route passera par les triangles semblables."
+                },
+                {
+                  "speaker": "Nérée",
+                  "text": "Très bien. Et maintenant que ce mur est droit, j'espère que la suite de la route le sera aussi."
+                }
+              ],
+              "endPart": true,
+              "message": "Partie 2 terminée.",
+              "announce": "Prochaine étape : Partie 3 — Triangles semblables.",
+              "nextPartId": "part3",
+              "nextPartTitle": "Partie 3 — Triangles semblables"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

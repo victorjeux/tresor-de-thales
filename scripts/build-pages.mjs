@@ -203,6 +203,12 @@ console.log('→ Réécriture des chemins…');
 const rewritten = rewriteTree(OUT, BASE);
 console.log(`  ${rewritten} fichier(s) texte mis à jour`);
 
+await fs.promises.copyFile(
+  path.join(process.cwd(), "index.html"),
+  path.join(process.cwd(), "dist", "index.html")
+);
+
+
 injectIndexConfig(path.join(OUT, 'index.html'), BASE);
 writeNoJekyll(OUT);
 writeSpa404(OUT);
